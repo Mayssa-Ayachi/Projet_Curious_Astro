@@ -1,0 +1,86 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - CinemachineTarget
+  - Astronaut1
+  - Astronaut2
+  - ImageBox1
+  - ImageBox2
+  - DialogueBox1
+  - DialogueBox2
+  - E1
+  - E2
+  - Text1
+  - Text2
+  - Astronaut3
+  - Astronaut4
+  - Astronaut5
+  - E3
+  - E4
+  - E5
+  - Text3
+  - Text4
+  - Text5
+  - ImageBox3
+  - ImageBox4
+  - ImageBox5
+  - DialogueBox3
+  - DialogueBox4
+  - DialogueBox5
+  - cube1
+  - quiz1
+  - question
+  - canvas
+  - questiontext
+  - rocket1
+  - rocket2
+  - rocket3
+  - rocket4
+  - rocket5
+  - rocket6
+  - rocket7
+  - rocket8
+  - winImage
+  - winText
+  - looseImage
+  - looseText
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - capsule
+  - Water
+  - UI
+  - Astronaut1
+  - Astronaut2
+  - Astronaut3
+  - Astronaut4
+  - Astronaut5
+  - cube1
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
