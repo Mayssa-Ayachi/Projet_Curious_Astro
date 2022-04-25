@@ -1,0 +1,56 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - CinemachineTarget
+  - E1
+  - E2
+  - Text1
+  - Text2
+  - moon
+  - TrackingObject
+  - Robot1
+  - parler1
+  - text1
+  - Robot2
+  - Robot3
+  - Robot4
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - Robot1
+  - Water
+  - UI
+  - Astronaut1
+  - Astronaut2
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0

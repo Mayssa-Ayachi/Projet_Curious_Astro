@@ -1,2 +1,4 @@
 # Auto detect text files and perform LF normalization
 * text=auto
+.tif filter=lfs diff=lfs merge=lfs -text
+53d2a04814d15c8a6397d029c21f82c5 filter=lfs diff=lfs merge=lfs -text
