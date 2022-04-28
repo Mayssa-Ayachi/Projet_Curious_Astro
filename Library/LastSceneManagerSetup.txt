@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/labo/Scenes/labo.unity
+- path: Assets/Scenes/Lunar scene.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0
