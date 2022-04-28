@@ -155,7 +155,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: abc9f0bc2ed253d4a96a96aa3ca2553b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NomSceneSuivante: how to play
+  NomSceneSuivante: Mars Landscape 3D Overview
 --- !u!1 &106130096 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2862278905927073192, guid: 035bf1ba97d19214580cfe6f5a29fdc3, type: 3}
@@ -166,6 +166,19 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1408581670749804, guid: f9a741bb8762344c6a2a9cb4217ef728, type: 3}
   m_PrefabInstance: {fileID: 708620137}
   m_PrefabAsset: {fileID: 0}
+--- !u!135 &116806135
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 116806132}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.6484386
+  m_Center: {x: -0.109844185, y: -2.4355282e-11, z: 0.038594183}
 --- !u!114 &116806136
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -193,7 +206,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: abc9f0bc2ed253d4a96a96aa3ca2553b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NomSceneSuivante: Mars Landscape 3D Overview
+  NomSceneSuivante: Lunar scene
 --- !u!1001 &393919391
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -669,6 +682,18 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6789804957547789107, guid: 1818e1a170ef94c3aacee2ba50057521, type: 3}
+      propertyPath: m_Radius
+      value: 0.64544183
+      objectReference: {fileID: 0}
+    - target: {fileID: 6789804957547789107, guid: 1818e1a170ef94c3aacee2ba50057521, type: 3}
+      propertyPath: m_Center.x
+      value: 0.000000007973761
+      objectReference: {fileID: 0}
+    - target: {fileID: 6789804957547789107, guid: 1818e1a170ef94c3aacee2ba50057521, type: 3}
+      propertyPath: m_Center.z
+      value: 0.36211994
+      objectReference: {fileID: 0}
+    - target: {fileID: 6789804957547789107, guid: 1818e1a170ef94c3aacee2ba50057521, type: 3}
       propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
@@ -705,8 +730,8 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 2.755306
-  m_Center: {x: 0.00000022131191, y: 1.0000011, z: 0.15644734}
+  m_Radius: 1.7050986
+  m_Center: {x: 0.0000002218969, y: 1.9610491, z: 0.06728199}
 --- !u!114 &1070241876
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -791,7 +816,8 @@ PrefabInstance:
       propertyPath: m_IsTrigger
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6442188560143635089, guid: 4f2ec922dde4f9447863a1de42b853f1, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 4f2ec922dde4f9447863a1de42b853f1, type: 3}
 --- !u!1001 &1193829817
 PrefabInstance:
