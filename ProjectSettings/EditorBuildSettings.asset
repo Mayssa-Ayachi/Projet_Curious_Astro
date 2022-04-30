@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/menu scene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
+    path: Assets/Scenes/loading scene.unity
+    guid: 3923708aeb4d7c1408de80b56af4cc1e
+  - enabled: 1
     path: Assets/Scenes/showroom.unity
     guid: 8f6e4b7810aff3b439e202b5c5f8d6dd
   - enabled: 1
@@ -21,10 +24,22 @@ EditorBuildSettings:
     path: Assets/Scenes/Lunar scene.unity
     guid: 9843af3715e77f9449ce2a31c0932987
   - enabled: 1
+    path: Assets/Scenes/congrats2.unity
+    guid: dfb7c59b22c21a4468f8090292f3c038
+  - enabled: 1
     path: Assets/labo/Scenes/labo.unity
     guid: a6096f87c0bb6ae47affc4d9c4af4beb
   - enabled: 1
     path: Assets/Scenes/Mars Landscape 3D Overview.unity
     guid: 070abdad4bba3b446b83b255aac0cfb9
+  - enabled: 1
+    path: Assets/Scenes/congrats.unity
+    guid: 0d6f6f09ee3417149964c8b53c984ece
+  - enabled: 1
+    path: Assets/Scenes/time over lost.unity
+    guid: 28c98a49599ca5644befbd07b81e4846
+  - enabled: 1
+    path: Assets/Scenes/scoreinf5.unity
+    guid: 1ed4a01321c33584e88e1256c9610de9
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 9e7be553448fa2546aea5752021cbcf7, type: 2}

@@ -1,12 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
 namespace StarterAssets {
     public class GameConfig : MonoBehaviour , IPointerClickHandler
     {
+        public string scenename;
         public GameObject timerAstro;
         public GameObject timerRockets;
         public GameObject timeAstroOver;
@@ -42,10 +44,18 @@ namespace StarterAssets {
 
         private void Start()
         {
+           // endMission1=true;
+            //endMission2=true;
+            Dialogue.count=0;
+            ItemCollector.score=0;
             _input = GetComponent<StarterAssetsInputs>();
+           Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
         }
 
         private void Update(){
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
             if(_input.etkalam && a){
                 startText.SetActive(false);
                 scoreAstro.SetActive(true);
@@ -73,7 +83,8 @@ namespace StarterAssets {
                     c=false;
                     timerRockets.SetActive(false);
                     scoreImage.SetActive(false);
-                    mission3.SetActive(true);
+                    SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+                    //mission3.SetActive(true);
                     timeTest=0f;
                 }
             }
@@ -115,9 +126,14 @@ namespace StarterAssets {
                 // eli chyet3mal ki youfa wa9t etache loula
                 FirstPersonController.changeMove(false);
                 endGameTime = true;
-                timeAstroOver.SetActive(true);
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 2);
+                //timeAstroOver.SetActive(true);
             }
         }
+        public void LoadScene(string scenename)
+    {
+        SceneManager.LoadScene(scenename);
+    }
 
         private void Being2(int Second)
         {
@@ -140,7 +156,7 @@ namespace StarterAssets {
             }
             OnEnd2();
         }
-
+       
         private void OnEnd2()
         {
             if(ItemCollector.score == 2){
@@ -154,14 +170,17 @@ namespace StarterAssets {
                 FirstPersonController.changeMove(false);
                 timerRockets.SetActive(false);
                 scoreImage.SetActive(false);
-                recketsOver.SetActive(true);
+                LoadScene("scoreinf5");
+                //recketsOver.SetActive(true);
                 
             }
             else{
                 // eli chyet3mal ki youfa wa9t etache ethenya
                 FirstPersonController.changeMove(false);
                 endGameTime = true;
-                timeAstroOver.SetActive(true);
+               // LoadScene("time over lost");
+               SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 2);
+                //timeAstroOver.SetActive(true);
             }
         }
     }

@@ -208,6 +208,7 @@ GameObject:
   m_Component:
   - component: {fileID: 346563418}
   - component: {fileID: 346563420}
+  - component: {fileID: 346563419}
   m_Layer: 5
   m_Name: Slider
   m_TagString: Untagged
@@ -237,6 +238,20 @@ RectTransform:
   m_AnchoredPosition: {x: 9, y: -440}
   m_SizeDelta: {x: 900, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &346563419
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 346563417}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5d00b8521d504e48aed73b4f18ca996, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  loadingslider: {fileID: 346563420}
+  scenename: showroom
 --- !u!114 &346563420
 MonoBehaviour:
   m_ObjectHideFlags: 0
