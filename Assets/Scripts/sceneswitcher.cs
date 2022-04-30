@@ -37,7 +37,7 @@ public void playGame()
     public void Gotolab(){
      SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex +1);
     }
-  public void retry(){
+     public void retry(){
       SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex -2);}
       public void backtomenu(){//mt3 mars
       SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex -10);}

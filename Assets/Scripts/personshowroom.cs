@@ -116,12 +116,10 @@ namespace StarterAssets
 
 			if(a){
 				timeTest += 1 * Time.deltaTime;
-				if(timeTest>=10){
+				if(timeTest>=17){
                     a=false;
                     timeTest=0f;
 					pod.GetComponent<SphereCollider>().isTrigger=true;
-					mars.GetComponent<SphereCollider>().isTrigger=true;
-					moon.GetComponent<SphereCollider>().isTrigger=true;
                 }
 			}
 		} 

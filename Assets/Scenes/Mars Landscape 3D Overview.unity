@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 297098016}
-  m_IndirectSpecularColor: {r: 0.21143565, g: 0.11296945, b: 0.09951228, a: 1}
+  m_IndirectSpecularColor: {r: 0.21143526, g: 0.112969376, b: 0.09951227, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -10626,7 +10626,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: "Welcome to Mars your first level\nyou have two missions :\n1) 5 min to
+  m_Text: "Welcome to Mars your second level\nyou have two missions :\n1) 5 min to
     talk with all \nthe astronauts\n2) 5 min to answer correctly\n5/8 questions\n\nPress
     E to Start"
 --- !u!222 &1547960507
