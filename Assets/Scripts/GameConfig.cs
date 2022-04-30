@@ -44,18 +44,17 @@ namespace StarterAssets {
 
         private void Start()
         {
-           // endMission1=true;
-            //endMission2=true;
             Dialogue.count=0;
             ItemCollector.score=0;
+            ItemCollector.visitedReckets=0;
             _input = GetComponent<StarterAssetsInputs>();
-           Cursor.lockState = CursorLockMode.None;
-            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;//false ?
         }
 
         private void Update(){
             Cursor.lockState = CursorLockMode.None;
-            Cursor.visible = true;
+            Cursor.visible = true;//3leh fel update ??
             if(_input.etkalam && a){
                 startText.SetActive(false);
                 scoreAstro.SetActive(true);
@@ -126,8 +125,8 @@ namespace StarterAssets {
                 // eli chyet3mal ki youfa wa9t etache loula
                 FirstPersonController.changeMove(false);
                 endGameTime = true;
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 2);
-                //timeAstroOver.SetActive(true);
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 2);// tetbadal 5tr thez lel labo
+                timeAstroOver.SetActive(true);// 3leh mne7ia
             }
         }
         public void LoadScene(string scenename)

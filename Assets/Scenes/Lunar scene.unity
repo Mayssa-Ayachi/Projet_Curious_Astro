@@ -242,7 +242,7 @@ MonoBehaviour:
   TimerAstroText: {fileID: 1530750583}
   TimerRocketsFill: {fileID: 165346478}
   TimerRocketsText: {fileID: 523366370}
-  Duration: 80
+  Duration: 2
   Duration2: 80
 --- !u!114 &93990796
 MonoBehaviour:
@@ -1294,7 +1294,6 @@ GameObject:
   - component: {fileID: 383077606}
   - component: {fileID: 383077609}
   - component: {fileID: 383077608}
-  - component: {fileID: 383077607}
   m_Layer: 5
   m_Name: TimerRockets
   m_TagString: Untagged
@@ -1320,38 +1319,9 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 847, y: 427}
+  m_AnchoredPosition: {x: -788, y: 292.00003}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &383077607
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 383077605}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ded19cb9dbc9fa64ea47107714555d50, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scenename: 
-  timerAstro: {fileID: 383077605}
-  timerRockets: {fileID: 0}
-  timeAstroOver: {fileID: 797766150}
-  recketsOver: {fileID: 0}
-  startText: {fileID: 0}
-  scoreAstro: {fileID: 0}
-  rockets: {fileID: 0}
-  scoreImage: {fileID: 0}
-  mission2: {fileID: 0}
-  mission3: {fileID: 0}
-  TimerAstroFill: {fileID: 165346478}
-  TimerAstroText: {fileID: 523366370}
-  TimerRocketsFill: {fileID: 0}
-  TimerRocketsText: {fileID: 0}
-  Duration: 10
-  Duration2: 0
 --- !u!114 &383077608
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3022,6 +2992,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -6.131
       objectReference: {fileID: 0}
+    - target: {fileID: 9500000, guid: 02dd6406ed1ebc248b2fafd0485e0de9, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 9e22852b9da8d834bab164ef1034a932, type: 2}
     - target: {fileID: 13700000, guid: 02dd6406ed1ebc248b2fafd0485e0de9, type: 3}
       propertyPath: m_Materials.Array.data[1]
       value: 
@@ -8128,6 +8102,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9500000, guid: 02dd6406ed1ebc248b2fafd0485e0de9, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 9e22852b9da8d834bab164ef1034a932, type: 2}
+    - target: {fileID: 9500000, guid: 02dd6406ed1ebc248b2fafd0485e0de9, type: 3}
       propertyPath: m_ApplyRootMotion
       value: 0
       objectReference: {fileID: 0}
@@ -9040,7 +9018,6 @@ GameObject:
   - component: {fileID: 1204981968}
   - component: {fileID: 1204981970}
   - component: {fileID: 1204981969}
-  - component: {fileID: 1204981971}
   m_Layer: 5
   m_Name: TimerAstro
   m_TagString: Untagged
@@ -9107,35 +9084,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1204981967}
   m_CullTransparentMesh: 1
---- !u!114 &1204981971
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1204981967}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ded19cb9dbc9fa64ea47107714555d50, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scenename: 
-  timerAstro: {fileID: 1204981967}
-  timerRockets: {fileID: 0}
-  timeAstroOver: {fileID: 797766150}
-  recketsOver: {fileID: 0}
-  startText: {fileID: 0}
-  scoreAstro: {fileID: 0}
-  rockets: {fileID: 0}
-  scoreImage: {fileID: 0}
-  mission2: {fileID: 0}
-  mission3: {fileID: 0}
-  TimerAstroFill: {fileID: 546026683}
-  TimerAstroText: {fileID: 1530750583}
-  TimerRocketsFill: {fileID: 0}
-  TimerRocketsText: {fileID: 0}
-  Duration: 10
-  Duration2: 0
 --- !u!4 &1205493857 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4008215048926364, guid: 4f2ec922dde4f9447863a1de42b853f1, type: 3}
@@ -10018,6 +9966,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0.382
       objectReference: {fileID: 0}
+    - target: {fileID: 9500000, guid: 02dd6406ed1ebc248b2fafd0485e0de9, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 9e22852b9da8d834bab164ef1034a932, type: 2}
     - target: {fileID: 13700000, guid: 02dd6406ed1ebc248b2fafd0485e0de9, type: 3}
       propertyPath: m_Materials.Array.data[1]
       value: 
@@ -11940,6 +11892,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2e401e99a993ee46854fa6dd41a5306, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 1900499674}
 --- !u!1 &1988680126
 GameObject:
   m_ObjectHideFlags: 0
