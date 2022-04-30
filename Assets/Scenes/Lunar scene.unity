@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 297098016}
-  m_IndirectSpecularColor: {r: 0.0020626625, g: 0.0019481757, b: 0.0021163435, a: 1}
+  m_IndirectSpecularColor: {r: 0.0020639834, g: 0.0019482663, b: 0.0021174347, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -227,6 +227,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ded19cb9dbc9fa64ea47107714555d50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scenename: 
   timerAstro: {fileID: 1204981967}
   timerRockets: {fileID: 383077605}
   timeAstroOver: {fileID: 797766150}
@@ -1334,6 +1335,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ded19cb9dbc9fa64ea47107714555d50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scenename: 
   timerAstro: {fileID: 383077605}
   timerRockets: {fileID: 0}
   timeAstroOver: {fileID: 797766150}
@@ -9064,7 +9066,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 847, y: 427}
+  m_AnchoredPosition: {x: -788, y: 292}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1204981969
@@ -9117,6 +9119,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ded19cb9dbc9fa64ea47107714555d50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scenename: 
   timerAstro: {fileID: 1204981967}
   timerRockets: {fileID: 0}
   timeAstroOver: {fileID: 797766150}
@@ -9301,6 +9304,10 @@ GameObject:
   - component: {fileID: 1328898110}
   - component: {fileID: 1328898108}
   - component: {fileID: 1328898109}
+  - component: {fileID: 1328898114}
+  - component: {fileID: 1328898113}
+  - component: {fileID: 1328898112}
+  - component: {fileID: 1328898111}
   m_Layer: 0
   m_Name: Terrain
   m_TagString: Untagged
@@ -9366,6 +9373,58 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1328898111
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1328898107}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 546.34644, y: 658.5033, z: 141.17044}
+  m_Center: {x: 151.01062, y: -218.71692, z: 320.64746}
+--- !u!65 &1328898112
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1328898107}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 107.98866, y: 592.6017, z: 390.213}
+  m_Center: {x: 303.77435, y: -178.63904, z: 148.44672}
+--- !u!65 &1328898113
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1328898107}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 371.07602, y: 960.6278, z: 110.64247}
+  m_Center: {x: 107.63219, y: -374.153, z: -55.321236}
+--- !u!65 &1328898114
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1328898107}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 340.17337, y: 1183.0265, z: 751.8862}
+  m_Center: {x: -170.99254, y: -474.1286, z: 107.42102}
 --- !u!1 &1378644651
 GameObject:
   m_ObjectHideFlags: 0
