@@ -35,7 +35,8 @@ namespace StarterAssets {
         bool c = true;
         private int remainingDuration;
         private bool Pause;
-        float timeTest = 0f; 
+        float timeTest = 0f;
+        public static bool isMoon=false;
 
         public void OnPointerClick(PointerEventData eventData)
         {
@@ -125,8 +126,12 @@ namespace StarterAssets {
                 // eli chyet3mal ki youfa wa9t etache loula
                 FirstPersonController.changeMove(false);
                 endGameTime = true;
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 2);// tetbadal 5tr thez lel labo
-                timeAstroOver.SetActive(true);// 3leh mne7ia
+                if(isMoon)
+                    SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 5);
+                else
+                    SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 2);
+
+                //timeAstroOver.SetActive(true);// 3leh mne7ia
             }
         }
         public void LoadScene(string scenename)

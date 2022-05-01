@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
+namespace StarterAssets{
 public class sceneswitcher : MonoBehaviour
 {
 public void playGame()
@@ -38,7 +39,11 @@ public void playGame()
      SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex +1);
     }
      public void retry(){
-      SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex -2);}
+        if(GameConfig.isMoon)
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex -5);
+        else 
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex -2);
+        }
       public void backtomenu(){//mt3 mars
       SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex -10);}
        public void backtomenu2(){//mta3 lmoon
@@ -48,6 +53,6 @@ public void playGame()
       public void gomenumoon(){//mta3 scoreinf5 f moon
       SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex -11);}
 
-
+}
 }
 

@@ -36,7 +36,7 @@ namespace StarterAssets {
         [SerializeField] Text scoreText;
 
         void Start(){
-            GameConfig.endMission1=false;
+           GameConfig.endMission1=false;
            GameConfig.endMission2=false;
            GameConfig.endGameTime=false;
            ItemCollector.visitedReckets=0;
