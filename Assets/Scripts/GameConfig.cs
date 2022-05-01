@@ -49,8 +49,8 @@ namespace StarterAssets {
             ItemCollector.score=0;
             ItemCollector.visitedReckets=0;
             _input = GetComponent<StarterAssetsInputs>();
-            Cursor.lockState = CursorLockMode.None;
-            Cursor.visible = true;//false ?
+            //Cursor.lockState = CursorLockMode.None;
+            //Cursor.visible = true;//false ?
         }
 
         private void Update(){
@@ -170,7 +170,7 @@ namespace StarterAssets {
                 //leb9ia fel update
             }
             else if(ItemCollector.visitedReckets==3){
-                // eli chyet3mal ki youfaw reckets etache ethenya whoua mejebch 5
+                //eli chyet3mal ki youfaw reckets etache ethenya whoua mejebch 5
                 FirstPersonController.changeMove(false);
                 timerRockets.SetActive(false);
                 scoreImage.SetActive(false);
@@ -180,6 +180,7 @@ namespace StarterAssets {
             }
             else{
                 // eli chyet3mal ki youfa wa9t etache ethenya
+                
                 FirstPersonController.changeMove(false);
                 endGameTime = true;
                // LoadScene("time over lost");
