@@ -49,13 +49,13 @@ namespace StarterAssets {
             ItemCollector.score=0;
             ItemCollector.visitedReckets=0;
             _input = GetComponent<StarterAssetsInputs>();
-            Cursor.lockState = CursorLockMode.None;
-            Cursor.visible = false;//true kenet
+            //Cursor.lockState = CursorLockMode.None;
+            //Cursor.visible = true;//false ?
         }
 
         private void Update(){
-            //Cursor.lockState = CursorLockMode.None;
-            //Cursor.visible = true;//3leh fel update ??
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;//3leh fel update ??
             if(_input.etkalam && a){
                 startText.SetActive(false);
                 scoreAstro.SetActive(true);
@@ -83,8 +83,6 @@ namespace StarterAssets {
                     c=false;
                     timerRockets.SetActive(false);
                     scoreImage.SetActive(false);
-                    Cursor.lockState = CursorLockMode.None;
-                    Cursor.visible = true;
                     SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
                     //mission3.SetActive(true);
                     timeTest=0f;
@@ -128,8 +126,6 @@ namespace StarterAssets {
                 // eli chyet3mal ki youfa wa9t etache loula
                 FirstPersonController.changeMove(false);
                 endGameTime = true;
-                Cursor.lockState = CursorLockMode.None;
-                Cursor.visible = true;
                 if(isMoon)
                     SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 5);
                 else
@@ -174,12 +170,10 @@ namespace StarterAssets {
                 //leb9ia fel update
             }
             else if(ItemCollector.visitedReckets==3){
-                //eli chyet3mal ki youfaw rockets etache ethenya whoua mejebch 5
+                //eli chyet3mal ki youfaw reckets etache ethenya whoua mejebch 5
                 FirstPersonController.changeMove(false);
                 timerRockets.SetActive(false);
                 scoreImage.SetActive(false);
-                Cursor.lockState = CursorLockMode.None;
-                Cursor.visible = true;
                 LoadScene("scoreinf5");
                 //recketsOver.SetActive(true);
                 
@@ -190,8 +184,6 @@ namespace StarterAssets {
                 FirstPersonController.changeMove(false);
                 endGameTime = true;
                // LoadScene("time over lost");
-               Cursor.lockState = CursorLockMode.None;
-                Cursor.visible = true;
                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 2);
                 //timeAstroOver.SetActive(true);
             }

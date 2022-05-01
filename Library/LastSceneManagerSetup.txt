@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Scenes/Lunar scene.unity
+- path: Assets/Scenes/congrats2.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0
