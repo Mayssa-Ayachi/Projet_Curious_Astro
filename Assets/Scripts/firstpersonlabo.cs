@@ -102,7 +102,8 @@ namespace StarterAssets
 			_controller = GetComponent<CharacterController>();
 			_input = GetComponent<StarterAssetsInputs>();
 			_playerInput = GetComponent<PlayerInput>();
-
+			Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = false;
 			// reset our timeouts on start
 			_jumpTimeoutDelta = JumpTimeout;
 			_fallTimeoutDelta = FallTimeout;

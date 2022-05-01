@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18322825, g: 0.22887719, b: 0.30642742, a: 1}
+  m_IndirectSpecularColor: {r: 0.18103765, g: 0.22660701, b: 0.30728388, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -426,6 +426,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   NomSceneSuivante: Mars Landscape 3D Overview
+--- !u!114 &175827720
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 175827718}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: def250baff28c6c4e8db81b50fcbd52b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speedX: 0.02
+  speedY: 0.1
+  speedZ: 0
 --- !u!1001 &230544453
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -702,6 +717,21 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5122797
   m_Center: {x: 0.0122797, y: 0, z: 0}
+--- !u!114 &264223737
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 264223734}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: def250baff28c6c4e8db81b50fcbd52b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speedX: 0.02
+  speedY: 0.1
+  speedZ: 0
 --- !u!1 &271730552 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7094977340588366727, guid: 035bf1ba97d19214580cfe6f5a29fdc3, type: 3}
@@ -1105,7 +1135,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 610707510}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.07, y: 1.69, z: 1.99}
+  m_LocalPosition: {x: 0, y: 1.7, z: 1.8}
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_Children: []
   m_Father: {fileID: 692041949}
@@ -3239,6 +3269,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4387678931267766, guid: 1818e1a170ef94c3aacee2ba50057521, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6789804957547789107, guid: 1818e1a170ef94c3aacee2ba50057521, type: 3}
+      propertyPath: m_Radius
+      value: 0.7279671
+      objectReference: {fileID: 0}
+    - target: {fileID: 6789804957547789107, guid: 1818e1a170ef94c3aacee2ba50057521, type: 3}
+      propertyPath: m_Center.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6789804957547789107, guid: 1818e1a170ef94c3aacee2ba50057521, type: 3}
