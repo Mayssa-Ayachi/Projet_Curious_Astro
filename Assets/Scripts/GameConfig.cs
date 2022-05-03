@@ -8,27 +8,24 @@ using UnityEngine.EventSystems;
 namespace StarterAssets {
     public class GameConfig : MonoBehaviour , IPointerClickHandler
     {
-        public string scenename;
         public GameObject timerAstro;
         public GameObject timerRockets;
         public GameObject timeAstroOver;
-        public GameObject recketsOver;
+        public GameObject rocketsOver;
         public static bool endGameTime = false;
         public static bool endMission1 = false;
         public static bool endMission2 = false;
-        public GameObject startText;
+        public GameObject startImage;
         public GameObject scoreAstro;
         public GameObject rockets;
         public GameObject scoreImage;
         public GameObject mission2;
-        public GameObject mission3;
         [SerializeField] private Image TimerAstroFill;
         [SerializeField] private Text TimerAstroText;
         [SerializeField] private Image TimerRocketsFill;
         [SerializeField] private Text TimerRocketsText;
         public int Duration;
         public int Duration2;
-
         private StarterAssetsInputs _input;
         bool a = true;
         bool b = true;
@@ -45,9 +42,9 @@ namespace StarterAssets {
 
         private void Start()
         {
-            Dialogue.count=0;
+            Dialogue.astro_counter=0;
             ItemCollector.score=0;
-            ItemCollector.visitedReckets=0;
+            ItemCollector.visitedRockets=0;
             _input = GetComponent<StarterAssetsInputs>();
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = false;
@@ -55,10 +52,10 @@ namespace StarterAssets {
 
         private void Update(){
             if(_input.etkalam && a){
-                startText.SetActive(false);
+                startImage.SetActive(false);
                 scoreAstro.SetActive(true);
                 timerAstro.SetActive(true);
-                FirstPersonController.changeMove(true);
+                FirstPersonController.canMove=true;
                 Being(Duration);
                 a=false;
             }
@@ -67,7 +64,7 @@ namespace StarterAssets {
                 scoreAstro.SetActive(false);
                 rockets.SetActive(true);
                 scoreImage.SetActive(true);
-                FirstPersonController.changeMove(true);
+                FirstPersonController.canMove=true;
                 b=false;
 
                 // bch ybde mission2
@@ -98,7 +95,7 @@ namespace StarterAssets {
 
         private IEnumerator UpdateTimer()
         {
-            while(remainingDuration >= 0 && Dialogue.count<2)
+            while(remainingDuration >= 0 && Dialogue.astro_counter<2)
             {
                 if (!Pause)
                 {
@@ -114,17 +111,17 @@ namespace StarterAssets {
 
         private void OnEnd()
         {
-            if(Dialogue.count == 2){
+            if(Dialogue.astro_counter == 2){
                 endMission1 = true;
                 // eli chyet3mal ki ykamal etache loula
-                FirstPersonController.changeMove(false);
+                FirstPersonController.canMove=false;
                 timerAstro.SetActive(false);
                 scoreAstro.SetActive(false);
                 mission2.SetActive(true);
             }
             else{
                 // eli chyet3mal ki youfa wa9t etache loula
-                FirstPersonController.changeMove(false);
+                FirstPersonController.canMove=false;
                 endGameTime = true;
                 Cursor.lockState = CursorLockMode.None;
                     Cursor.visible = true;
@@ -145,7 +142,7 @@ namespace StarterAssets {
 
         private IEnumerator UpdateTimer2()
         {
-            while(remainingDuration >= 0 && ItemCollector.score<2 && ItemCollector.visitedReckets<3)
+            while(remainingDuration >= 0 && ItemCollector.score<2 && ItemCollector.visitedRockets<3)
             {
                 if (!Pause)
                 {
@@ -163,25 +160,25 @@ namespace StarterAssets {
         {
             if(ItemCollector.score == 2){
                 // eli chyet3mal ki ykamal etache ethenya
-                FirstPersonController.changeMove(false);
+                FirstPersonController.canMove=false;
                 endMission2=true;
                 //leb9ia fel update
             }
-            else if(ItemCollector.visitedReckets==3){
-                //eli chyet3mal ki youfaw reckets etache ethenya whoua mejebch 5
-                FirstPersonController.changeMove(false);
+            else if(ItemCollector.visitedRockets==3){
+                //eli chyet3mal ki youfaw rockets etache ethenya whoua mejebch 5
+                FirstPersonController.canMove=false;
                 timerRockets.SetActive(false);
                 scoreImage.SetActive(false);
                 Cursor.lockState = CursorLockMode.None;
                 Cursor.visible = true;
                 SceneManager.LoadScene("scoreinf5");
-                //recketsOver.SetActive(true);
+                //rocketsOver.SetActive(true);
                 
             }
             else{
                 // eli chyet3mal ki youfa wa9t etache ethenya
                 
-                FirstPersonController.changeMove(false);
+                FirstPersonController.canMove=false;
                 endGameTime = true;
                // LoadScene("time over lost");
                Cursor.lockState = CursorLockMode.None;

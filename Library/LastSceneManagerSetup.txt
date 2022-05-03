@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/labo/Scenes/labo2.unity
+- path: Assets/Scenes/Mars Landscape 3D Overview.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0

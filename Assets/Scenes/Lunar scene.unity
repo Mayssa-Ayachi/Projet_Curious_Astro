@@ -227,17 +227,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ded19cb9dbc9fa64ea47107714555d50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scenename: 
   timerAstro: {fileID: 1204981967}
   timerRockets: {fileID: 383077605}
   timeAstroOver: {fileID: 797766150}
-  recketsOver: {fileID: 2137516710}
-  startText: {fileID: 1117207410}
+  rocketsOver: {fileID: 2137516710}
+  startImage: {fileID: 1117207410}
   scoreAstro: {fileID: 179418204}
   rockets: {fileID: 468146787}
   scoreImage: {fileID: 459267928}
   mission2: {fileID: 1274053624}
-  mission3: {fileID: 0}
   TimerAstroFill: {fileID: 546026683}
   TimerAstroText: {fileID: 1530750583}
   TimerRocketsFill: {fileID: 165346478}
@@ -1942,7 +1940,7 @@ GameObject:
   - component: {fileID: 570022522}
   - component: {fileID: 570022521}
   m_Layer: 5
-  m_Name: RecketsOverText
+  m_Name: RocketsOverText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12532,7 +12530,7 @@ GameObject:
   - component: {fileID: 2137516713}
   - component: {fileID: 2137516712}
   m_Layer: 5
-  m_Name: RecketsOver
+  m_Name: RocketsOver
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

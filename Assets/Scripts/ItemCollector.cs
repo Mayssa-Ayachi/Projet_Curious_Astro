@@ -14,10 +14,9 @@ namespace StarterAssets {
         public GameObject win;
         public GameObject loose;
         public GameObject timeOver;
-        
         float currentTime;
         private float startingTime = 30f;
-        public static int visitedReckets = 0;
+        public static int visitedRockets = 0;
         bool currentState1=false;
         bool currentState2=false;
         bool currentState3=false;
@@ -30,7 +29,6 @@ namespace StarterAssets {
         bool test=false;
         float timeTest = 0f; 
         public int Duration;
-
         [SerializeField] private Image uiFill;
         [SerializeField] Text countdownText;
         [SerializeField] Text scoreText;
@@ -39,7 +37,7 @@ namespace StarterAssets {
            GameConfig.endMission1=false;
            GameConfig.endMission2=false;
            GameConfig.endGameTime=false;
-           ItemCollector.visitedReckets=0;
+           ItemCollector.visitedRockets=0;
             _input = GetComponent<StarterAssetsInputs>();
             currentTime = startingTime;
         }
@@ -64,30 +62,30 @@ namespace StarterAssets {
                     currentState1=false;
                     currentTime=30f;
                     obj.SetActive(false);
-                    FirstPersonController.changeMove(true);
+                    FirstPersonController.canMove=true;
                     win.SetActive(true);
                     test=true;
                     score++;
                     scoreText.text = "Score : "+score+"/5";
-                    visitedReckets++;
+                    visitedRockets++;
                 }
                 if(_input.tap2){
                     currentState1=false;
                     currentTime=30f;
                     obj.SetActive(false);
-                    FirstPersonController.changeMove(true);
+                    FirstPersonController.canMove=true;
                     loose.SetActive(true);
                     test=true;
-                    visitedReckets++;
+                    visitedRockets++;
                 }
                 if(_input.tap3){
                     currentState1=false;
                     currentTime=30f;
                     obj.SetActive(false);
-                    FirstPersonController.changeMove(true);
+                    FirstPersonController.canMove=true;
                     loose.SetActive(true);
                     test=true;
-                    visitedReckets++;
+                    visitedRockets++;
                 }
             }
 
@@ -99,30 +97,30 @@ namespace StarterAssets {
                     currentState2=false;
                     currentTime=30f;
                     obj.SetActive(false);
-                    FirstPersonController.changeMove(true);
+                    FirstPersonController.canMove=true;
                     win.SetActive(true);
                     score++;
                     scoreText.text = "Score : "+score+"/5";
                     test=true;
-                    visitedReckets++;
+                    visitedRockets++;
                 }
                 if(_input.tap1){
                     currentState2=false;
                     currentTime=30f;
                     obj.SetActive(false);
-                    FirstPersonController.changeMove(true);
+                    FirstPersonController.canMove=true;
                     loose.SetActive(true);
                     test=true;
-                    visitedReckets++;
+                    visitedRockets++;
                 }
                 if(_input.tap3){
                     currentState2=false;
                     currentTime=30f;
                     obj.SetActive(false);
-                    FirstPersonController.changeMove(true);
+                    FirstPersonController.canMove=true;
                     loose.SetActive(true);
                     test=true;
-                    visitedReckets++;
+                    visitedRockets++;
                 }
             }
 
@@ -134,30 +132,30 @@ namespace StarterAssets {
                     currentState3=false;
                     currentTime=30f;
                     obj.SetActive(false);
-                    FirstPersonController.changeMove(true);
+                    FirstPersonController.canMove=true;
                     win.SetActive(true);
                     score++;
                     scoreText.text = "Score : "+score+"/5";
                     test=true;
-                    visitedReckets++;
+                    visitedRockets++;
                 }
                 if(_input.tap2){
                     currentState3=false;
                     currentTime=30f;
                     obj.SetActive(false);
-                    FirstPersonController.changeMove(true);
+                    FirstPersonController.canMove=true;
                     loose.SetActive(true);
                     test=true;
-                    visitedReckets++;
+                    visitedRockets++;
                 }
                 if(_input.tap1){
                     currentState3=false;
                     currentTime=30f;
                     obj.SetActive(false);
-                    FirstPersonController.changeMove(true);
+                    FirstPersonController.canMove=true;
                     loose.SetActive(true);
                     test=true;
-                    visitedReckets++;
+                    visitedRockets++;
                 }
             }
 
@@ -169,30 +167,30 @@ namespace StarterAssets {
                     currentState4=false;
                     currentTime=30f;
                     obj.SetActive(false);
-                    FirstPersonController.changeMove(true);
+                    FirstPersonController.canMove=true;
                     win.SetActive(true);
                     score++;
                     scoreText.text = "Score : "+score+"/5";
                     test=true;
-                    visitedReckets++;
+                    visitedRockets++;
                 }
                 if(_input.tap2){
                     currentState4=false;
                     currentTime=30f;
                     obj.SetActive(false);
-                    FirstPersonController.changeMove(true);
+                    FirstPersonController.canMove=true;
                     loose.SetActive(true);
                     test=true;
-                    visitedReckets++;
+                    visitedRockets++;
                 }
                 if(_input.tap3){
                     currentState4=false;
                     currentTime=30f;
                     obj.SetActive(false);
-                    FirstPersonController.changeMove(true);
+                    FirstPersonController.canMove=true;
                     loose.SetActive(true);
                     test=true;
-                    visitedReckets++;
+                    visitedRockets++;
                 }
             }
 
@@ -204,30 +202,30 @@ namespace StarterAssets {
                     currentState5=false;
                     currentTime=30f;
                     obj.SetActive(false);
-                    FirstPersonController.changeMove(true);
+                    FirstPersonController.canMove=true;
                     win.SetActive(true);
                     score++;
                     scoreText.text = "Score : "+score+"/5";
                     test=true;
-                    visitedReckets++;
+                    visitedRockets++;
                 }
                 if(_input.tap2){
                     currentState5=false;
                     currentTime=30f;
                     obj.SetActive(false);
-                    FirstPersonController.changeMove(true);
+                    FirstPersonController.canMove=true;
                     loose.SetActive(true);
                     test=true;
-                    visitedReckets++;
+                    visitedRockets++;
                 }
                 if(_input.tap3){
                     currentState5=false;
                     currentTime=30f;
                     obj.SetActive(false);
-                    FirstPersonController.changeMove(true);
+                    FirstPersonController.canMove=true;
                     loose.SetActive(true);
                     test=true;
-                    visitedReckets++;
+                    visitedRockets++;
                 }
             }
 
@@ -239,30 +237,30 @@ namespace StarterAssets {
                     currentState6=false;
                     currentTime=30f;
                     obj.SetActive(false);
-                    FirstPersonController.changeMove(true);
+                    FirstPersonController.canMove=true;
                     win.SetActive(true);
                     score++;
                     scoreText.text = "Score : "+score+"/5";
                     test=true;
-                    visitedReckets++;
+                    visitedRockets++;
                 }
                 if(_input.tap1){
                     currentState6=false;
                     currentTime=30f;
                     obj.SetActive(false);
-                    FirstPersonController.changeMove(true);
+                    FirstPersonController.canMove=true;
                     loose.SetActive(true);
                     test=true;
-                    visitedReckets++;
+                    visitedRockets++;
                 }
                 if(_input.tap3){
                     currentState6=false;
                     currentTime=30f;
                     obj.SetActive(false);
-                    FirstPersonController.changeMove(true);
+                    FirstPersonController.canMove=true;
                     loose.SetActive(true);
                     test=true;
-                    visitedReckets++;
+                    visitedRockets++;
                 }
             }
 
@@ -274,30 +272,30 @@ namespace StarterAssets {
                     currentState7=false;
                     currentTime=30f;
                     obj.SetActive(false);
-                    FirstPersonController.changeMove(true);
+                    FirstPersonController.canMove=true;
                     win.SetActive(true);
                     score++;
                     scoreText.text = "Score : "+score+"/5";
                     test=true;
-                    visitedReckets++;
+                    visitedRockets++;
                 }
                 if(_input.tap2){
                     currentState7=false;
                     currentTime=30f;
                     obj.SetActive(false);
-                    FirstPersonController.changeMove(true);
+                    FirstPersonController.canMove=true;
                     loose.SetActive(true);
                     test=true;
-                    visitedReckets++;
+                    visitedRockets++;
                 }
                 if(_input.tap3){
                     currentState7=false;
                     currentTime=30f;
                     obj.SetActive(false);
-                    FirstPersonController.changeMove(true);
+                    FirstPersonController.canMove=true;
                     loose.SetActive(true);
                     test=true;
-                    visitedReckets++;
+                    visitedRockets++;
                 }
             }
 
@@ -309,30 +307,30 @@ namespace StarterAssets {
                     currentState8=false;
                     currentTime=30f;
                     obj.SetActive(false);
-                    FirstPersonController.changeMove(true);
+                    FirstPersonController.canMove=true;
                     win.SetActive(true);
                     score++;
                     scoreText.text = "Score : "+score+"/5";
                     test=true;
-                    visitedReckets++;
+                    visitedRockets++;
                 }
                 if(_input.tap2){
                     currentState8=false;
                     currentTime=30f;
                     obj.SetActive(false);
-                    FirstPersonController.changeMove(true);
+                    FirstPersonController.canMove=true;
                     loose.SetActive(true);
                     test=true;
-                    visitedReckets++;
+                    visitedRockets++;
                 }
                 if(_input.tap3){
                     currentState8=false;
                     currentTime=30f;
                     obj.SetActive(false);
-                    FirstPersonController.changeMove(true);
+                    FirstPersonController.canMove=true;
                     loose.SetActive(true);
                     test=true;
-                    visitedReckets++;
+                    visitedRockets++;
                 }
             }
             if (currentTime <= 0){
@@ -346,22 +344,20 @@ namespace StarterAssets {
                 currentState7 = false;
                 currentState8 = false;
                 obj.SetActive(false);
-                FirstPersonController.changeMove(true);
+                FirstPersonController.canMove=true;
                 timeOver.SetActive(true);
                 test=true;
-                visitedReckets++;
+                visitedRockets++;
             }
             }
-            else{
+            else
                 obj.SetActive(false);
-            }
         }
 
         public void OnTriggerEnter(Collider other){
             if(other.gameObject.CompareTag("rocket1")){
-                //Destroy(other.gameObject);
                 GameObject.FindGameObjectWithTag("rocket1").SetActive(false);
-                FirstPersonController.changeMove(false);
+                FirstPersonController.canMove=false;
                 obj.SetActive(true);
                 GameObject.FindGameObjectWithTag("questiontext").GetComponent<Text>().text="How many moons does Mars have?";
                 GameObject.FindGameObjectWithTag("DialogueBox3").GetComponent<Text>().text="2\n\nTap 1";
@@ -370,9 +366,8 @@ namespace StarterAssets {
                 currentState1 = true;
             }
             if(other.gameObject.CompareTag("rocket2")){
-                //Destroy(other.gameObject);
                 GameObject.FindGameObjectWithTag("rocket2").SetActive(false);
-                FirstPersonController.changeMove(false);
+                FirstPersonController.canMove=false;
                 obj.SetActive(true);
                 GameObject.FindGameObjectWithTag("questiontext").GetComponent<Text>().text="Ancient people thought the planet\nlooked as red as blood and\nnamed it after their :";
                 GameObject.FindGameObjectWithTag("DialogueBox3").GetComponent<Text>().text="Love God\n\nTap 1";
@@ -381,9 +376,8 @@ namespace StarterAssets {
                 currentState2 = true;
             }
             if(other.gameObject.CompareTag("rocket3")){
-                //Destroy(other.gameObject);
                 GameObject.FindGameObjectWithTag("rocket3").SetActive(false);
-                FirstPersonController.changeMove(false);
+                FirstPersonController.canMove=false;
                 obj.SetActive(true);
                 GameObject.FindGameObjectWithTag("questiontext").GetComponent<Text>().text="The right answer is 3";
                 GameObject.FindGameObjectWithTag("DialogueBox3").GetComponent<Text>().text="first answer\n\nTap 1";
@@ -392,9 +386,8 @@ namespace StarterAssets {
                 currentState3 = true;
             }
             if(other.gameObject.CompareTag("rocket4")){
-                //Destroy(other.gameObject);
                 GameObject.FindGameObjectWithTag("rocket4").SetActive(false);
-                FirstPersonController.changeMove(false);
+                FirstPersonController.canMove=false;
                 obj.SetActive(true);
                 GameObject.FindGameObjectWithTag("questiontext").GetComponent<Text>().text="The right answer is 1";
                 GameObject.FindGameObjectWithTag("DialogueBox3").GetComponent<Text>().text="first answer\n\nTap 1";
@@ -403,9 +396,8 @@ namespace StarterAssets {
                 currentState4 = true;
             }
             if(other.gameObject.CompareTag("rocket5")){
-                //Destroy(other.gameObject);
                 GameObject.FindGameObjectWithTag("rocket5").SetActive(false);
-                FirstPersonController.changeMove(false);
+                FirstPersonController.canMove=false;
                 obj.SetActive(true);
                 GameObject.FindGameObjectWithTag("questiontext").GetComponent<Text>().text="The right answer is 1";
                 GameObject.FindGameObjectWithTag("DialogueBox3").GetComponent<Text>().text="first answer\n\nTap 1";
@@ -414,9 +406,8 @@ namespace StarterAssets {
                 currentState5 = true;
             }
             if(other.gameObject.CompareTag("rocket6")){
-                //Destroy(other.gameObject);
                 GameObject.FindGameObjectWithTag("rocket6").SetActive(false);
-                FirstPersonController.changeMove(false);
+                FirstPersonController.canMove=false;
                 obj.SetActive(true);
                 GameObject.FindGameObjectWithTag("questiontext").GetComponent<Text>().text="What is Mars's nickname";
                 GameObject.FindGameObjectWithTag("DialogueBox3").GetComponent<Text>().text="Dark planet\n\nTap 1";
@@ -425,9 +416,8 @@ namespace StarterAssets {
                 currentState6 = true;
             }
             if(other.gameObject.CompareTag("rocket7")){
-                //Destroy(other.gameObject);
                 GameObject.FindGameObjectWithTag("rocket7").SetActive(false);
-                FirstPersonController.changeMove(false);
+                FirstPersonController.canMove=false;
                 obj.SetActive(true);
                 GameObject.FindGameObjectWithTag("questiontext").GetComponent<Text>().text="The right answer is 1";
                 GameObject.FindGameObjectWithTag("DialogueBox3").GetComponent<Text>().text="first answer\n\nTap 1";
@@ -436,9 +426,8 @@ namespace StarterAssets {
                 currentState7 = true;
             }
             if(other.gameObject.CompareTag("rocket8")){
-                //Destroy(other.gameObject);
                 GameObject.FindGameObjectWithTag("rocket8").SetActive(false);
-                FirstPersonController.changeMove(false);
+                FirstPersonController.canMove=false;
                 obj.SetActive(true);
                 GameObject.FindGameObjectWithTag("questiontext").GetComponent<Text>().text="The right answer is 1";
                 GameObject.FindGameObjectWithTag("DialogueBox3").GetComponent<Text>().text="first answer\n\nTap 1";
