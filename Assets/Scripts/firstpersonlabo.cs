@@ -115,20 +115,17 @@ namespace StarterAssets
 			GroundedCheck();
 			Move();
 
-			
-
 			Collider[] hitColliders = Physics.OverlapSphere(checkAstro.position,0.5f,whatisAstro);
 			if(hitColliders.Length!=0 && var==false){
 				GameObject.FindGameObjectWithTag("parler1").GetComponent<Image>().enabled=true;
 				GameObject.FindGameObjectWithTag("text1").GetComponent<Text>().enabled=true;
 				if(_input.etkalam==true){
-				var=true;
-				hitColliders[0]/*.FindGameObjectWithTag("Robot1")*/.GetComponent<AudioSource>().enabled=true;
-				GameObject.FindGameObjectWithTag("parler1").GetComponent<Image>().enabled=false;
-				GameObject.FindGameObjectWithTag("text1").GetComponent<Text>().enabled=false;
+					var=true;
+					hitColliders[0].GetComponent<AudioSource>().enabled=true;
+					GameObject.FindGameObjectWithTag("parler1").GetComponent<Image>().enabled=false;
+					GameObject.FindGameObjectWithTag("text1").GetComponent<Text>().enabled=false;
 				}
 			}
-		
 			if(hitColliders.Length==0){
 				var=false;
 				GameObject.FindGameObjectWithTag("Robot1").GetComponent<AudioSource>().enabled=false;
@@ -137,7 +134,6 @@ namespace StarterAssets
 				GameObject.FindGameObjectWithTag("Robot4").GetComponent<AudioSource>().enabled=false;
 				GameObject.FindGameObjectWithTag("parler1").GetComponent<Image>().enabled=false;
 				GameObject.FindGameObjectWithTag("text1").GetComponent<Text>().enabled=false;
-				
 			}
 		} 
 
@@ -146,13 +142,6 @@ namespace StarterAssets
 			CameraRotation();
 		}
 
-
-		/*private void OnTriggerEnter(Collider other){
-			if(other.gameObject.tag=="Robot1"){
-				Robot1.GetComponent<SphereCollider>().isTrigger=true;
-				Debug.Log("hello");
-			}
-		}*/
 		private void GroundedCheck()
 		{
 			// set sphere position, with offset

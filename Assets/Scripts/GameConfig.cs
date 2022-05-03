@@ -10,8 +10,6 @@ namespace StarterAssets {
     {
         public GameObject timerAstro;
         public GameObject timerRockets;
-        public GameObject timeAstroOver;
-        public GameObject rocketsOver;
         public static bool endGameTime = false;
         public static bool endMission1 = false;
         public static bool endMission2 = false;
@@ -124,13 +122,11 @@ namespace StarterAssets {
                 FirstPersonController.canMove=false;
                 endGameTime = true;
                 Cursor.lockState = CursorLockMode.None;
-                    Cursor.visible = true;
+                Cursor.visible = true;
                 if(isMoon)
                     SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 5);
                 else
                     SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 2);
-
-                //timeAstroOver.SetActive(true);
             }
         }
 
@@ -172,19 +168,14 @@ namespace StarterAssets {
                 Cursor.lockState = CursorLockMode.None;
                 Cursor.visible = true;
                 SceneManager.LoadScene("scoreinf5");
-                //rocketsOver.SetActive(true);
-                
             }
             else{
                 // eli chyet3mal ki youfa wa9t etache ethenya
-                
                 FirstPersonController.canMove=false;
                 endGameTime = true;
-               // LoadScene("time over lost");
-               Cursor.lockState = CursorLockMode.None;
+                Cursor.lockState = CursorLockMode.None;
                 Cursor.visible = true;
-               SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 2);
-                //timeAstroOver.SetActive(true);
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 2);
             }
         }
     }

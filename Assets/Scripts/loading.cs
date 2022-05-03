@@ -19,12 +19,10 @@ public class loading : MonoBehaviour
     {
         if (loadingslider.value == 100)
         {
-            LoadScene(scenename);
-
+            SceneManager.LoadScene(scenename);
         }
     }
-    IEnumerator loading_d()
-    {
+    IEnumerator loading_d(){
         yield return new WaitForSeconds(1);
         loadingslider.value = 25;
         yield return new WaitForSeconds(2);
@@ -33,11 +31,5 @@ public class loading : MonoBehaviour
         loadingslider.value = 60;
         yield return new WaitForSeconds(2);
         loadingslider.value = 100;
-
-
-    }
-    public void LoadScene(string scenename)
-    {
-        SceneManager.LoadScene(scenename);
     }
 }

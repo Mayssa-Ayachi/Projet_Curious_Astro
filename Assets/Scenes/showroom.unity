@@ -143,19 +143,6 @@ MonoBehaviour:
   speedX: 0
   speedY: 0.1
   speedZ: 0
---- !u!114 &51587591
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 51587586}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: abc9f0bc2ed253d4a96a96aa3ca2553b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  NomSceneSuivante: Mars Landscape 3D Overview
 --- !u!1 &106130096 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2862278905927073192, guid: 035bf1ba97d19214580cfe6f5a29fdc3, type: 3}
@@ -194,19 +181,6 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 1.128638
   m_Center: {x: -0.48136666, y: 0.04326099, z: -0.1801966}
---- !u!114 &116806137
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 116806132}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: abc9f0bc2ed253d4a96a96aa3ca2553b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  NomSceneSuivante: Lunar scene
 --- !u!1001 &393919391
 PrefabInstance:
   m_ObjectHideFlags: 0

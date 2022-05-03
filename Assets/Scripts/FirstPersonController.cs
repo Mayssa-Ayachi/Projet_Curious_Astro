@@ -93,6 +93,7 @@ namespace StarterAssets
 
 		private void Start()
 		{
+			canMove=false;
 			_controller = GetComponent<CharacterController>();
 			_input = GetComponent<StarterAssetsInputs>();
 			_playerInput = GetComponent<PlayerInput>();
