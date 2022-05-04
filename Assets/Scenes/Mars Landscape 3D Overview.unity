@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 297098016}
-  m_IndirectSpecularColor: {r: 0.211435, g: 0.112969115, b: 0.099511996, a: 1}
+  m_IndirectSpecularColor: {r: 0.21143526, g: 0.112969376, b: 0.09951227, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -231,8 +231,8 @@ MonoBehaviour:
   TimerAstroText: {fileID: 1530750583}
   TimerRocketsFill: {fileID: 165346478}
   TimerRocketsText: {fileID: 523366370}
-  Duration: 2
-  Duration2: 10
+  Duration: 80
+  Duration2: 80
 --- !u!114 &93990799
 MonoBehaviour:
   m_ObjectHideFlags: 0

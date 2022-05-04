@@ -13,10 +13,10 @@ public void playGame()
     }
    public void options()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 2);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 3);
     }
     public void Back()
-    { SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 2); }
+    { SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 4); }
     public void Quit()
     {
         Application.Quit();
@@ -29,7 +29,7 @@ public void playGame()
     }
     public void Gotoplay()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 2);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 3);
     }
     public void Next(){
     SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 2);
