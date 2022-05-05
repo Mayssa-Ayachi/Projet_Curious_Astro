@@ -4,11 +4,12 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class Dialogue : MonoBehaviour {
+    
+    public static int astroCounter;
     public string[] dialogue;
     public bool isTalking;
-    public Text scoreAstroText;
-    public static int astroCounter = 0;
 
+    [SerializeField] Text scoreAstroText;
     int dialogueIndex;
     Image imageBox;
     Text textBox;
@@ -20,32 +21,33 @@ public class Dialogue : MonoBehaviour {
 
 
     public void Start(){
-        imageBox = GameObject.FindGameObjectWithTag("ImageBox1").GetComponent<Image>();
-        textBox = GameObject.FindGameObjectWithTag("DialogueBox1").GetComponent<Text>();
+        astroCounter=0;
+        imageBox=GameObject.FindGameObjectWithTag("ImageBox1").GetComponent<Image>();
+        textBox=GameObject.FindGameObjectWithTag("DialogueBox1").GetComponent<Text>();
     }
 
     public void Initialize(){
         isTalking=false;
         dialogueIndex=0;
         imageBox.enabled=false;
-        textBox.text = "";
+        textBox.text="";
     }    
 
     public void StartDialogue(){
         imageBox.enabled=true;
-        textBox.text = dialogue[dialogueIndex];
-        isTalking = true;
+        textBox.text=dialogue[dialogueIndex];
+        isTalking=true;
     }
 
     public void NextLine(){
-	    if(isTalking && dialogueIndex != dialogue.Length - 1){
+	    if(isTalking && (dialogueIndex!=dialogue.Length-1)){
 		    dialogueIndex++;
-		    textBox.text = dialogue[dialogueIndex];
+		    textBox.text=dialogue[dialogueIndex];
 	    }
-        else if(isTalking && dialogueIndex == dialogue.Length - 1){
+        else if(isTalking && (dialogueIndex==dialogue.Length-1)){
             
 		    Initialize();
-
+            
             if(dialogue[0]=="Hello my name is Yeils" && once1){
                 astroCounter++;
                 scoreAstroText.text = "Astronaut : "+astroCounter+"/5";

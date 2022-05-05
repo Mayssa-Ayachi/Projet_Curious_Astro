@@ -220,19 +220,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ded19cb9dbc9fa64ea47107714555d50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timerAstro: {fileID: 1204981967}
-  timerRockets: {fileID: 383077605}
   startImage: {fileID: 1117207410}
+  firstMissionDuration: 30
+  firstMissionTimer: {fileID: 1204981967}
+  firstMissionTimerFill: {fileID: 546026683}
+  firstMissionTimerText: {fileID: 1530750583}
   scoreAstro: {fileID: 179418204}
+  secondMission: {fileID: 1274053624}
+  secondMissionDuration: 200
   rockets: {fileID: 468146787}
-  scoreImage: {fileID: 459267928}
-  mission2: {fileID: 1274053624}
-  TimerAstroFill: {fileID: 546026683}
-  TimerAstroText: {fileID: 1530750583}
-  TimerRocketsFill: {fileID: 165346478}
-  TimerRocketsText: {fileID: 523366370}
-  Duration: 80
-  Duration2: 80
+  secondMissionTimer: {fileID: 383077605}
+  secondMissionTimerFill: {fileID: 165346478}
+  secondMissionTimerText: {fileID: 523366370}
+  scoreRocket: {fileID: 459267928}
 --- !u!114 &93990799
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -245,14 +245,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85ee55cf95c78534ebf9b5ae2b678da1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  obj: {fileID: 1870050915}
-  win: {fileID: 1877047692}
-  loose: {fileID: 393518332}
-  timeOver: {fileID: 1008647791}
   Duration: 30
-  uiFill: {fileID: 1380403484}
-  countdownText: {fileID: 948367268}
-  scoreText: {fileID: 1593984117}
+  quizPanel: {fileID: 1870050915}
+  correctAnswer: {fileID: 1877047692}
+  wrongAnswer: {fileID: 393518332}
+  timeOver: {fileID: 1008647791}
+  quizTimerFill: {fileID: 1380403484}
+  quizTimerText: {fileID: 948367268}
+  scoreRocketText: {fileID: 1593984117}
 --- !u!1 &165346476
 GameObject:
   m_ObjectHideFlags: 0
@@ -265,7 +265,7 @@ GameObject:
   - component: {fileID: 165346479}
   - component: {fileID: 165346478}
   m_Layer: 5
-  m_Name: TimerRocketsFill
+  m_Name: SecondMissionTimerFill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -340,7 +340,7 @@ GameObject:
   - component: {fileID: 179418207}
   - component: {fileID: 179418206}
   m_Layer: 5
-  m_Name: scoreAstro
+  m_Name: ScoreAstro
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1225,7 +1225,7 @@ GameObject:
   - component: {fileID: 383077608}
   - component: {fileID: 383077607}
   m_Layer: 5
-  m_Name: TimerRockets
+  m_Name: SecondMissionTimer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1264,19 +1264,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ded19cb9dbc9fa64ea47107714555d50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timerAstro: {fileID: 383077605}
-  timerRockets: {fileID: 0}
   startImage: {fileID: 0}
+  firstMissionDuration: 0
+  firstMissionTimer: {fileID: 0}
+  firstMissionTimerFill: {fileID: 0}
+  firstMissionTimerText: {fileID: 0}
   scoreAstro: {fileID: 0}
+  secondMission: {fileID: 0}
+  secondMissionDuration: 0
   rockets: {fileID: 0}
-  scoreImage: {fileID: 0}
-  mission2: {fileID: 0}
-  TimerAstroFill: {fileID: 165346478}
-  TimerAstroText: {fileID: 523366370}
-  TimerRocketsFill: {fileID: 0}
-  TimerRocketsText: {fileID: 0}
-  Duration: 10
-  Duration2: 0
+  secondMissionTimer: {fileID: 0}
+  secondMissionTimerFill: {fileID: 0}
+  secondMissionTimerText: {fileID: 0}
+  scoreRocket: {fileID: 0}
 --- !u!114 &383077608
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1327,7 +1327,7 @@ GameObject:
   - component: {fileID: 393518335}
   - component: {fileID: 393518334}
   m_Layer: 5
-  m_Name: looser
+  m_Name: WrongAnswer
   m_TagString: ImageBox1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1624,7 +1624,7 @@ GameObject:
   - component: {fileID: 459267931}
   - component: {fileID: 459267930}
   m_Layer: 5
-  m_Name: scoreImage
+  m_Name: ScoreRocket
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1812,7 +1812,7 @@ GameObject:
   - component: {fileID: 523366371}
   - component: {fileID: 523366370}
   m_Layer: 5
-  m_Name: TimerRocketsText
+  m_Name: SecondMissionTimerText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1926,7 +1926,7 @@ GameObject:
   - component: {fileID: 546026684}
   - component: {fileID: 546026683}
   m_Layer: 5
-  m_Name: TimerAstroFill
+  m_Name: FirstMissionTimerFill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7704,14 +7704,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85ee55cf95c78534ebf9b5ae2b678da1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  obj: {fileID: 1870050915}
-  win: {fileID: 1877047692}
-  loose: {fileID: 393518332}
-  timeOver: {fileID: 1008647791}
   Duration: 30
-  uiFill: {fileID: 1380403484}
-  countdownText: {fileID: 948367268}
-  scoreText: {fileID: 1593984117}
+  quizPanel: {fileID: 0}
+  correctAnswer: {fileID: 0}
+  wrongAnswer: {fileID: 0}
+  timeOver: {fileID: 1008647791}
+  quizTimerFill: {fileID: 0}
+  quizTimerText: {fileID: 0}
+  scoreRocketText: {fileID: 0}
 --- !u!1 &914713549 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100014, guid: 02dd6406ed1ebc248b2fafd0485e0de9, type: 3}
@@ -7844,7 +7844,7 @@ GameObject:
   - component: {fileID: 948367269}
   - component: {fileID: 948367268}
   m_Layer: 5
-  m_Name: TimerText
+  m_Name: QuizTimerText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8359,7 +8359,7 @@ GameObject:
   - component: {fileID: 1008647794}
   - component: {fileID: 1008647793}
   m_Layer: 5
-  m_Name: timeOver
+  m_Name: TimeOver
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8854,7 +8854,7 @@ GameObject:
   - component: {fileID: 1204981970}
   - component: {fileID: 1204981969}
   m_Layer: 5
-  m_Name: TimerAstro
+  m_Name: FirstMissionTimer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9007,7 +9007,7 @@ GameObject:
   - component: {fileID: 1274053627}
   - component: {fileID: 1274053626}
   m_Layer: 5
-  m_Name: Mission2
+  m_Name: SecondMission
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9215,7 +9215,7 @@ GameObject:
   - component: {fileID: 1378644655}
   - component: {fileID: 1378644654}
   m_Layer: 5
-  m_Name: Timer
+  m_Name: QuizTimer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9292,7 +9292,7 @@ GameObject:
   - component: {fileID: 1380403485}
   - component: {fileID: 1380403484}
   m_Layer: 5
-  m_Name: TimerFill
+  m_Name: QuizTimerFill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9937,7 +9937,7 @@ GameObject:
   - component: {fileID: 1530750584}
   - component: {fileID: 1530750583}
   m_Layer: 5
-  m_Name: TimerAstroText
+  m_Name: FirstMissionTimerText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10210,7 +10210,7 @@ GameObject:
   - component: {fileID: 1593984118}
   - component: {fileID: 1593984117}
   m_Layer: 5
-  m_Name: score
+  m_Name: ScoreRocketText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11176,7 +11176,7 @@ GameObject:
   - component: {fileID: 1870050918}
   - component: {fileID: 1870050917}
   m_Layer: 5
-  m_Name: quiz1
+  m_Name: QuizPanel
   m_TagString: quiz1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11256,7 +11256,7 @@ GameObject:
   - component: {fileID: 1877047695}
   - component: {fileID: 1877047694}
   m_Layer: 5
-  m_Name: winner
+  m_Name: CorrectAnswer
   m_TagString: ImageBox1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

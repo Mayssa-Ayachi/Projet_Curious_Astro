@@ -7,434 +7,187 @@ using UnityEngine.InputSystem;
 #endif
 namespace StarterAssets {
 
-    public class ItemCollector : MonoBehaviour
-    {
-        private StarterAssetsInputs _input;
-        public GameObject obj;
-        public GameObject win;
-        public GameObject loose;
-        public GameObject timeOver;
-        float currentTime;
-        private float startingTime = 30f;
-        public static int visitedRockets = 0;
-        bool currentState1=false;
-        bool currentState2=false;
-        bool currentState3=false;
-        bool currentState4=false;
-        bool currentState5=false;
-        bool currentState6=false;
-        bool currentState7=false;
-        bool currentState8=false;
-        public static int score=0;
-        bool test=false;
-        float timeTest = 0f; 
-        public int Duration;
-        [SerializeField] private Image uiFill;
-        [SerializeField] Text countdownText;
-        [SerializeField] Text scoreText;
+    public class ItemCollector : MonoBehaviour{
 
-        void Start(){
-           GameConfig.endMission1=false;
-           GameConfig.endMission2=false;
-           GameConfig.endGameTime=false;
-           ItemCollector.visitedRockets=0;
+        public static int visitedRockets;
+        public static int score;
+
+        [SerializeField] int duration;
+        [SerializeField] GameObject quizPanel;
+        [SerializeField] GameObject correctAnswer;
+        [SerializeField] GameObject wrongAnswer;
+        [SerializeField] GameObject timeOver;
+        [SerializeField] Image quizTimerFill;
+        [SerializeField] Text quizTimerText;
+        [SerializeField] Text scoreRocketText;
+        StarterAssetsInputs _input;
+        bool test;
+        float startingTime;
+        float currentTime;
+        float timeTest;
+        bool currentState1;
+        bool currentState2;
+        bool currentState3;
+        bool currentState4;
+        bool currentState5;
+        bool currentState6;
+        bool currentState7;
+        bool currentState8;
+        
+
+        public void Start(){
+            score=0;
+            visitedRockets=0;
             _input = GetComponent<StarterAssetsInputs>();
+            startingTime=duration;
             currentTime = startingTime;
+            timeTest=0f;
+            currentState1=false;
+            currentState2=false;
+            currentState3=false;
+            currentState4=false;
+            currentState5=false;
+            currentState6=false;
+            currentState7=false;
+            currentState8=false;
+            test=false;
         }
-        void Update(){
-            
+
+
+        private void Update(){
             if(test){
                 timeTest += 1 * Time.deltaTime;
                 if(timeTest>=2){
                     test=false;
-                    win.SetActive(false);
-                    loose.SetActive(false);
+                    correctAnswer.SetActive(false);
+                    wrongAnswer.SetActive(false);
                     timeOver.SetActive(false);
                     timeTest=0f;
                 }
             }
-            if(!GameConfig.endGameTime){
-            if(currentState1){
-                currentTime -= 1 * Time.deltaTime;
-                countdownText.text = Mathf.Round(currentTime).ToString();
-                uiFill.fillAmount = Mathf.InverseLerp(0, Duration, currentTime);
-                if(_input.tap1){
-                    currentState1=false;
-                    currentTime=30f;
-                    obj.SetActive(false);
-                    FirstPersonController.canMove=true;
-                    win.SetActive(true);
-                    test=true;
-                    score++;
-                    scoreText.text = "Score : "+score+"/5";
-                    visitedRockets++;
-                }
-                if(_input.tap2){
-                    currentState1=false;
-                    currentTime=30f;
-                    obj.SetActive(false);
-                    FirstPersonController.canMove=true;
-                    loose.SetActive(true);
-                    test=true;
-                    visitedRockets++;
-                }
-                if(_input.tap3){
-                    currentState1=false;
-                    currentTime=30f;
-                    obj.SetActive(false);
-                    FirstPersonController.canMove=true;
-                    loose.SetActive(true);
-                    test=true;
-                    visitedRockets++;
-                }
-            }
-
-            if(currentState2){
-                currentTime -= 1 * Time.deltaTime;
-                countdownText.text = Mathf.Round(currentTime).ToString();
-                uiFill.fillAmount = Mathf.InverseLerp(0, Duration, currentTime);
-                if(_input.tap2){
-                    currentState2=false;
-                    currentTime=30f;
-                    obj.SetActive(false);
-                    FirstPersonController.canMove=true;
-                    win.SetActive(true);
-                    score++;
-                    scoreText.text = "Score : "+score+"/5";
-                    test=true;
-                    visitedRockets++;
-                }
-                if(_input.tap1){
-                    currentState2=false;
-                    currentTime=30f;
-                    obj.SetActive(false);
-                    FirstPersonController.canMove=true;
-                    loose.SetActive(true);
-                    test=true;
-                    visitedRockets++;
-                }
-                if(_input.tap3){
-                    currentState2=false;
-                    currentTime=30f;
-                    obj.SetActive(false);
-                    FirstPersonController.canMove=true;
-                    loose.SetActive(true);
-                    test=true;
-                    visitedRockets++;
-                }
-            }
-
-            if(currentState3){
-                currentTime -= 1 * Time.deltaTime;
-                countdownText.text = Mathf.Round(currentTime).ToString();
-                uiFill.fillAmount = Mathf.InverseLerp(0, Duration, currentTime);
-                if(_input.tap3){
-                    currentState3=false;
-                    currentTime=30f;
-                    obj.SetActive(false);
-                    FirstPersonController.canMove=true;
-                    win.SetActive(true);
-                    score++;
-                    scoreText.text = "Score : "+score+"/5";
-                    test=true;
-                    visitedRockets++;
-                }
-                if(_input.tap2){
-                    currentState3=false;
-                    currentTime=30f;
-                    obj.SetActive(false);
-                    FirstPersonController.canMove=true;
-                    loose.SetActive(true);
-                    test=true;
-                    visitedRockets++;
-                }
-                if(_input.tap1){
-                    currentState3=false;
-                    currentTime=30f;
-                    obj.SetActive(false);
-                    FirstPersonController.canMove=true;
-                    loose.SetActive(true);
-                    test=true;
-                    visitedRockets++;
-                }
-            }
-
-            if(currentState4){
-                currentTime -= 1 * Time.deltaTime;
-                countdownText.text = Mathf.Round(currentTime).ToString();
-                uiFill.fillAmount = Mathf.InverseLerp(0, Duration, currentTime);
-                if(_input.tap1){
-                    currentState4=false;
-                    currentTime=30f;
-                    obj.SetActive(false);
-                    FirstPersonController.canMove=true;
-                    win.SetActive(true);
-                    score++;
-                    scoreText.text = "Score : "+score+"/5";
-                    test=true;
-                    visitedRockets++;
-                }
-                if(_input.tap2){
-                    currentState4=false;
-                    currentTime=30f;
-                    obj.SetActive(false);
-                    FirstPersonController.canMove=true;
-                    loose.SetActive(true);
-                    test=true;
-                    visitedRockets++;
-                }
-                if(_input.tap3){
-                    currentState4=false;
-                    currentTime=30f;
-                    obj.SetActive(false);
-                    FirstPersonController.canMove=true;
-                    loose.SetActive(true);
-                    test=true;
-                    visitedRockets++;
-                }
-            }
-
-            if(currentState5){
-                currentTime -= 1 * Time.deltaTime;
-                countdownText.text = Mathf.Round(currentTime).ToString();
-                uiFill.fillAmount = Mathf.InverseLerp(0, Duration, currentTime);
-                if(_input.tap1){
-                    currentState5=false;
-                    currentTime=30f;
-                    obj.SetActive(false);
-                    FirstPersonController.canMove=true;
-                    win.SetActive(true);
-                    score++;
-                    scoreText.text = "Score : "+score+"/5";
-                    test=true;
-                    visitedRockets++;
-                }
-                if(_input.tap2){
-                    currentState5=false;
-                    currentTime=30f;
-                    obj.SetActive(false);
-                    FirstPersonController.canMove=true;
-                    loose.SetActive(true);
-                    test=true;
-                    visitedRockets++;
-                }
-                if(_input.tap3){
-                    currentState5=false;
-                    currentTime=30f;
-                    obj.SetActive(false);
-                    FirstPersonController.canMove=true;
-                    loose.SetActive(true);
-                    test=true;
-                    visitedRockets++;
-                }
-            }
-
-            if(currentState6){
-                currentTime -= 1 * Time.deltaTime;
-                countdownText.text = Mathf.Round(currentTime).ToString();
-                uiFill.fillAmount = Mathf.InverseLerp(0, Duration, currentTime);
-                if(_input.tap2){
-                    currentState6=false;
-                    currentTime=30f;
-                    obj.SetActive(false);
-                    FirstPersonController.canMove=true;
-                    win.SetActive(true);
-                    score++;
-                    scoreText.text = "Score : "+score+"/5";
-                    test=true;
-                    visitedRockets++;
-                }
-                if(_input.tap1){
-                    currentState6=false;
-                    currentTime=30f;
-                    obj.SetActive(false);
-                    FirstPersonController.canMove=true;
-                    loose.SetActive(true);
-                    test=true;
-                    visitedRockets++;
-                }
-                if(_input.tap3){
-                    currentState6=false;
-                    currentTime=30f;
-                    obj.SetActive(false);
-                    FirstPersonController.canMove=true;
-                    loose.SetActive(true);
-                    test=true;
-                    visitedRockets++;
-                }
-            }
-
-            if(currentState7){
-                currentTime -= 1 * Time.deltaTime;
-                countdownText.text = Mathf.Round(currentTime).ToString();
-                uiFill.fillAmount = Mathf.InverseLerp(0, Duration, currentTime);
-                if(_input.tap1){
-                    currentState7=false;
-                    currentTime=30f;
-                    obj.SetActive(false);
-                    FirstPersonController.canMove=true;
-                    win.SetActive(true);
-                    score++;
-                    scoreText.text = "Score : "+score+"/5";
-                    test=true;
-                    visitedRockets++;
-                }
-                if(_input.tap2){
-                    currentState7=false;
-                    currentTime=30f;
-                    obj.SetActive(false);
-                    FirstPersonController.canMove=true;
-                    loose.SetActive(true);
-                    test=true;
-                    visitedRockets++;
-                }
-                if(_input.tap3){
-                    currentState7=false;
-                    currentTime=30f;
-                    obj.SetActive(false);
-                    FirstPersonController.canMove=true;
-                    loose.SetActive(true);
-                    test=true;
-                    visitedRockets++;
-                }
-            }
-
-            if(currentState8){
-                currentTime -= 1 * Time.deltaTime;
-                countdownText.text = Mathf.Round(currentTime).ToString();
-                uiFill.fillAmount = Mathf.InverseLerp(0, Duration, currentTime);
-                if(_input.tap1){
-                    currentState8=false;
-                    currentTime=30f;
-                    obj.SetActive(false);
-                    FirstPersonController.canMove=true;
-                    win.SetActive(true);
-                    score++;
-                    scoreText.text = "Score : "+score+"/5";
-                    test=true;
-                    visitedRockets++;
-                }
-                if(_input.tap2){
-                    currentState8=false;
-                    currentTime=30f;
-                    obj.SetActive(false);
-                    FirstPersonController.canMove=true;
-                    loose.SetActive(true);
-                    test=true;
-                    visitedRockets++;
-                }
-                if(_input.tap3){
-                    currentState8=false;
-                    currentTime=30f;
-                    obj.SetActive(false);
-                    FirstPersonController.canMove=true;
-                    loose.SetActive(true);
-                    test=true;
-                    visitedRockets++;
-                }
-            }
-            if (currentTime <= 0){
-                currentTime = 30f;
-                currentState1 = false;
-                currentState2 = false;
-                currentState3 = false;
-                currentState4 = false;
-                currentState5 = false;
-                currentState6 = false;
-                currentState7 = false;
-                currentState8 = false;
-                obj.SetActive(false);
-                FirstPersonController.canMove=true;
-                timeOver.SetActive(true);
-                test=true;
-                visitedRockets++;
-            }
+            
+            if(!GameConfig.endChapterTime){
+                if(currentState1)
+                    currentState1=QuizResult(currentState1,"1");
+                if(currentState2)
+                    currentState2=QuizResult(currentState2,"2");
+                if(currentState3)
+                    currentState3=QuizResult(currentState3,"3");
+                if(currentState4)
+                    currentState4=QuizResult(currentState4,"1");
+                if(currentState5)
+                    currentState5=QuizResult(currentState5,"1");
+                if(currentState6)
+                    currentState6=QuizResult(currentState6,"2");
+                if(currentState7)
+                    currentState7=QuizResult(currentState7,"1");
+                if(currentState8)
+                    currentState8=QuizResult(currentState8,"1");
+                if (currentTime<=0)
+                    QuizTimeOver();
             }
             else
-                obj.SetActive(false);
+                quizPanel.SetActive(false);
         }
+
+        bool QuizResult(bool currentState, string correct){
+            currentTime-=1*Time.deltaTime;
+            quizTimerText.text=Mathf.Round(currentTime).ToString();
+            quizTimerFill.fillAmount=Mathf.InverseLerp(0,duration,currentTime);
+            if((_input.tap1 && !_input.tap2 && !_input.tap3) || (_input.tap2 && !_input.tap1 && !_input.tap3) 
+                                                             || (_input.tap3 && !_input.tap2 && !_input.tap1)){
+                quizPanel.SetActive(false);
+                test=true;
+                visitedRockets++;
+                currentState=false;
+                currentTime=duration;
+                FirstPersonController.canMove=true;
+            }
+            if(_input.tap1 && !_input.tap2 && !_input.tap3 && correct=="1"){
+                correctAnswer.SetActive(true);
+                score++;
+                scoreRocketText.text = "Score : "+score+"/5";
+            }
+            else if(_input.tap1 && !_input.tap2 && !_input.tap3 && correct!="1")
+                wrongAnswer.SetActive(true);
+            else if(_input.tap2 && !_input.tap1 && !_input.tap3 && correct=="2"){
+                correctAnswer.SetActive(true);
+                score++;
+                scoreRocketText.text = "Score : "+score+"/5";
+            }
+            else if(_input.tap2 && !_input.tap1 && !_input.tap3 && correct!="2")
+                wrongAnswer.SetActive(true);
+            else if(_input.tap3 && !_input.tap2 && !_input.tap1 && correct=="3"){
+                correctAnswer.SetActive(true);
+                score++;
+                scoreRocketText.text = "Score : "+score+"/5";
+            }
+            else if(_input.tap3 && !_input.tap2 && !_input.tap1 && correct!="3")
+                wrongAnswer.SetActive(true);
+            return currentState;
+        }
+
+        void QuizTimeOver(){
+            quizPanel.SetActive(false);
+            timeOver.SetActive(true);
+            currentTime = duration;
+            currentState1 = false;
+            currentState2 = false;
+            currentState3 = false;
+            currentState4 = false;
+            currentState5 = false;
+            currentState6 = false;
+            currentState7 = false;
+            currentState8 = false;
+            FirstPersonController.canMove=true;
+            test=true;
+            visitedRockets++;
+        }
+        
 
         public void OnTriggerEnter(Collider other){
             if(other.gameObject.CompareTag("rocket1")){
-                GameObject.FindGameObjectWithTag("rocket1").SetActive(false);
-                FirstPersonController.canMove=false;
-                obj.SetActive(true);
-                GameObject.FindGameObjectWithTag("questiontext").GetComponent<Text>().text="How many moons does Mars have?";
-                GameObject.FindGameObjectWithTag("DialogueBox3").GetComponent<Text>().text="2\n\nTap 1";
-                GameObject.FindGameObjectWithTag("DialogueBox4").GetComponent<Text>().text="3\n\nTap 2";
-                GameObject.FindGameObjectWithTag("DialogueBox5").GetComponent<Text>().text="4\n\nTap 3";
+                MakeQuiz("rocket1","How many moons does Mars have?","2\n\nTap 1","3\n\nTap 2","4\n\nTap 3");
                 currentState1 = true;
             }
             if(other.gameObject.CompareTag("rocket2")){
-                GameObject.FindGameObjectWithTag("rocket2").SetActive(false);
-                FirstPersonController.canMove=false;
-                obj.SetActive(true);
-                GameObject.FindGameObjectWithTag("questiontext").GetComponent<Text>().text="Ancient people thought the planet\nlooked as red as blood and\nnamed it after their :";
-                GameObject.FindGameObjectWithTag("DialogueBox3").GetComponent<Text>().text="Love God\n\nTap 1";
-                GameObject.FindGameObjectWithTag("DialogueBox4").GetComponent<Text>().text="War God\n\nTap 2";
-                GameObject.FindGameObjectWithTag("DialogueBox5").GetComponent<Text>().text="Water God\n\nTap 3";
+                MakeQuiz("rocket2","Ancient people thought the planet\nlooked as red as blood and\nnamed it after their :","Love God\n\nTap 1","War God\n\nTap 2","Water God\n\nTap 3");
                 currentState2 = true;
             }
             if(other.gameObject.CompareTag("rocket3")){
-                GameObject.FindGameObjectWithTag("rocket3").SetActive(false);
-                FirstPersonController.canMove=false;
-                obj.SetActive(true);
-                GameObject.FindGameObjectWithTag("questiontext").GetComponent<Text>().text="The right answer is 3";
-                GameObject.FindGameObjectWithTag("DialogueBox3").GetComponent<Text>().text="first answer\n\nTap 1";
-                GameObject.FindGameObjectWithTag("DialogueBox4").GetComponent<Text>().text="second answer\n\nTap 2";
-                GameObject.FindGameObjectWithTag("DialogueBox5").GetComponent<Text>().text="third answer\n\nTap 3";
+                MakeQuiz("rocket3","The right answer is 3","first answer\n\nTap 1","second answer\n\nTap 2","third answer\n\nTap 3");
                 currentState3 = true;
             }
             if(other.gameObject.CompareTag("rocket4")){
-                GameObject.FindGameObjectWithTag("rocket4").SetActive(false);
-                FirstPersonController.canMove=false;
-                obj.SetActive(true);
-                GameObject.FindGameObjectWithTag("questiontext").GetComponent<Text>().text="The right answer is 1";
-                GameObject.FindGameObjectWithTag("DialogueBox3").GetComponent<Text>().text="first answer\n\nTap 1";
-                GameObject.FindGameObjectWithTag("DialogueBox4").GetComponent<Text>().text="second answer\n\nTap 2";
-                GameObject.FindGameObjectWithTag("DialogueBox5").GetComponent<Text>().text="third answer\n\nTap 3";
+                MakeQuiz("rocket4","The right answer is 1","first answer\n\nTap 1","second answer\n\nTap 2","third answer\n\nTap 3");
                 currentState4 = true;
             }
             if(other.gameObject.CompareTag("rocket5")){
-                GameObject.FindGameObjectWithTag("rocket5").SetActive(false);
-                FirstPersonController.canMove=false;
-                obj.SetActive(true);
-                GameObject.FindGameObjectWithTag("questiontext").GetComponent<Text>().text="The right answer is 1";
-                GameObject.FindGameObjectWithTag("DialogueBox3").GetComponent<Text>().text="first answer\n\nTap 1";
-                GameObject.FindGameObjectWithTag("DialogueBox4").GetComponent<Text>().text="second answer\n\nTap 2";
-                GameObject.FindGameObjectWithTag("DialogueBox5").GetComponent<Text>().text="third answer\n\nTap 3";
+                MakeQuiz("rocket5","The right answer is 1","first answer\n\nTap 1","second answer\n\nTap 2","third answer\n\nTap 3");
                 currentState5 = true;
             }
             if(other.gameObject.CompareTag("rocket6")){
-                GameObject.FindGameObjectWithTag("rocket6").SetActive(false);
-                FirstPersonController.canMove=false;
-                obj.SetActive(true);
-                GameObject.FindGameObjectWithTag("questiontext").GetComponent<Text>().text="What is Mars's nickname";
-                GameObject.FindGameObjectWithTag("DialogueBox3").GetComponent<Text>().text="Dark planet\n\nTap 1";
-                GameObject.FindGameObjectWithTag("DialogueBox4").GetComponent<Text>().text="Red planet\n\nTap 2";
-                GameObject.FindGameObjectWithTag("DialogueBox5").GetComponent<Text>().text="Empty planet\n\nTap 3";
+                MakeQuiz("rocket6","What is Mars's nickname","Dark planet\n\nTap 1","Red planet\n\nTap 2","Empty planet\n\nTap 3");
                 currentState6 = true;
             }
             if(other.gameObject.CompareTag("rocket7")){
-                GameObject.FindGameObjectWithTag("rocket7").SetActive(false);
-                FirstPersonController.canMove=false;
-                obj.SetActive(true);
-                GameObject.FindGameObjectWithTag("questiontext").GetComponent<Text>().text="The right answer is 1";
-                GameObject.FindGameObjectWithTag("DialogueBox3").GetComponent<Text>().text="first answer\n\nTap 1";
-                GameObject.FindGameObjectWithTag("DialogueBox4").GetComponent<Text>().text="second answer\n\nTap 2";
-                GameObject.FindGameObjectWithTag("DialogueBox5").GetComponent<Text>().text="third answer\n\nTap 3";
+                MakeQuiz("rocket7","The right answer is 1","first answer\n\nTap 1","second answer\n\nTap 2","third answer\n\nTap 3");
                 currentState7 = true;
             }
             if(other.gameObject.CompareTag("rocket8")){
-                GameObject.FindGameObjectWithTag("rocket8").SetActive(false);
-                FirstPersonController.canMove=false;
-                obj.SetActive(true);
-                GameObject.FindGameObjectWithTag("questiontext").GetComponent<Text>().text="The right answer is 1";
-                GameObject.FindGameObjectWithTag("DialogueBox3").GetComponent<Text>().text="first answer\n\nTap 1";
-                GameObject.FindGameObjectWithTag("DialogueBox4").GetComponent<Text>().text="second answer\n\nTap 2";
-                GameObject.FindGameObjectWithTag("DialogueBox5").GetComponent<Text>().text="third answer\n\nTap 3";
+                MakeQuiz("rocket8","The right answer is 1","first answer\n\nTap 1","second answer\n\nTap 2","third answer\n\nTap 3");
                 currentState8 = true;
             }
+        }
+
+        void MakeQuiz(string name, string question, string answer1, string answer2, string answer3){
+            GameObject.FindGameObjectWithTag(name).SetActive(false);
+            FirstPersonController.canMove=false;
+            quizPanel.SetActive(true);
+            GameObject.FindGameObjectWithTag("questiontext").GetComponent<Text>().text=question;
+            GameObject.FindGameObjectWithTag("DialogueBox3").GetComponent<Text>().text=answer1;
+            GameObject.FindGameObjectWithTag("DialogueBox4").GetComponent<Text>().text=answer2;
+            GameObject.FindGameObjectWithTag("DialogueBox5").GetComponent<Text>().text=answer3;
         }
     }
 }

@@ -75,10 +75,9 @@ namespace StarterAssets
 		private bool IsCurrentDeviceMouse => _playerInput.currentControlScheme == "KeyboardMouse";
 
 		// talking with astro
-		public Transform checkAstro;
-		public LayerMask whatisAstro;
 		public static bool canMove;
-
+		[SerializeField] Transform checkAstro;
+		[SerializeField] LayerMask whatisAstro;
 		bool isAstro;
 		bool EkeyWasPressed;
 		bool astroWasFar;
@@ -117,7 +116,7 @@ namespace StarterAssets
 
 			//talking with astro
 			Collider[] astroColliders = Physics.OverlapSphere(checkAstro.position,0.5f,whatisAstro);
-			if(astroColliders.Length==0 || GameConfig.endGameTime || GameConfig.endMission1){
+			if(astroColliders.Length==0 || GameConfig.endChapterTime || GameConfig.endFirstMission){
 				isAstro=false;
 				GameObject.FindGameObjectWithTag("Astronaut1").GetComponent<Dialogue>().Initialize();
 				GameObject.FindGameObjectWithTag("E1").GetComponent<Image>().enabled=false;
@@ -147,6 +146,7 @@ namespace StarterAssets
 					astroColliders[0].GetComponent<Dialogue>().NextLine();
 				}
 		}
+
 
 		private void LateUpdate(){
 			CameraRotation();

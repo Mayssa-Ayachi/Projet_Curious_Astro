@@ -6,121 +6,97 @@ using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
 namespace StarterAssets {
-    public class GameConfig : MonoBehaviour , IPointerClickHandler
-    {
-        public GameObject timerAstro;
-        public GameObject timerRockets;
-        public static bool endGameTime = false;
-        public static bool endMission1 = false;
-        public static bool endMission2 = false;
-        public GameObject startImage;
-        public GameObject scoreAstro;
-        public GameObject rockets;
-        public GameObject scoreImage;
-        public GameObject mission2;
-        [SerializeField] private Image TimerAstroFill;
-        [SerializeField] private Text TimerAstroText;
-        [SerializeField] private Image TimerRocketsFill;
-        [SerializeField] private Text TimerRocketsText;
-        public int Duration;
-        public int Duration2;
-        private StarterAssetsInputs _input;
-        bool a = true;
-        bool b = true;
-        bool c = true;
-        private int remainingDuration;
-        private bool Pause;
-        float timeTest = 0f;
-        public static bool isMoon=false;
+    public class GameConfig : MonoBehaviour{
 
-        public void OnPointerClick(PointerEventData eventData)
-        {
-            Pause = !Pause;
-        }
+        public static bool isMoon;
+        public static bool endChapterTime;
+        public static bool endFirstMission;
 
-        private void Start()
-        {
-            Dialogue.astroCounter=0;
-            ItemCollector.score=0;
-            ItemCollector.visitedRockets=0;
+        [SerializeField] GameObject startImage;
+        [SerializeField] int firstMissionDuration;
+        [SerializeField] GameObject firstMissionTimer;
+        [SerializeField] Image firstMissionTimerFill;
+        [SerializeField] Text firstMissionTimerText;
+        [SerializeField] GameObject scoreAstro;
+        [SerializeField] GameObject secondMission;
+        [SerializeField] int secondMissionDuration;
+        [SerializeField] GameObject rockets;
+        [SerializeField] GameObject secondMissionTimer;
+        [SerializeField] Image secondMissionTimerFill;
+        [SerializeField] Text secondMissionTimerText;
+        [SerializeField] GameObject scoreRocket;
+        bool endSecondMission;
+        StarterAssetsInputs _input;
+        int remainingDuration;
+        float timeTest;
+        bool a;
+        bool b;
+
+
+        public void Start(){
             _input = GetComponent<StarterAssetsInputs>();
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = false;
+            isMoon = false;
+            endChapterTime = false;
+            endFirstMission = false;
+            endSecondMission = false;
+            timeTest = 0f;
+            a = true;
+            b = true;
         }
+
 
         private void Update(){
             if(_input.etkalam && a){
-                startImage.SetActive(false);
-                scoreAstro.SetActive(true);
-                timerAstro.SetActive(true);
-                FirstPersonController.canMove=true;
-                Being(Duration);
+                StartChapter();
                 a=false;
             }
-            if(endMission1 && _input.tap1 && b){
-                mission2.SetActive(false);
-                scoreAstro.SetActive(false);
-                rockets.SetActive(true);
-                scoreImage.SetActive(true);
-                FirstPersonController.canMove=true;
+
+            if(endFirstMission && _input.tap1 && b){
+                StartMission2();
                 b=false;
-
-                // bch ybde mission2
-                timerRockets.SetActive(true);
-                Being2(Duration2);
             }
-
-            if(endMission2 && c){
-                timeTest += 1 * Time.deltaTime;
-                if(timeTest>=2){
-                    c=false;
-                    timerRockets.SetActive(false);
-                    scoreImage.SetActive(false);
-                    timeTest=0f;
-                    Cursor.lockState = CursorLockMode.None;
-                    Cursor.visible = true;
-                    SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-                    //mission3.SetActive(true);
-                }
+            
+            if(endSecondMission){
+                EndChapter();
             }
         }
 
-        private void Being(int Second)
-        {
-            remainingDuration = Second;
+
+        void StartChapter(){
+            startImage.SetActive(false);
+            scoreAstro.SetActive(true);
+            firstMissionTimer.SetActive(true);
+            FirstPersonController.canMove=true;
+            remainingDuration=firstMissionDuration;
             StartCoroutine(UpdateTimer());
         }
 
-        private IEnumerator UpdateTimer()
-        {
-            while(remainingDuration >= 0 && Dialogue.astroCounter<2)
-            {
-                if (!Pause)
-                {
-                    TimerAstroText.text = $"{remainingDuration / 60:00}:{remainingDuration % 60:00}";
-                    TimerAstroFill.fillAmount = Mathf.InverseLerp(0, Duration, remainingDuration);
-                    remainingDuration--;
-                    yield return new WaitForSeconds(1f);
-                }
+        IEnumerator UpdateTimer(){
+            while(remainingDuration>=0 && Dialogue.astroCounter<2){
+                firstMissionTimerText.text = $"{remainingDuration / 60:00}:{remainingDuration % 60:00}";
+                firstMissionTimerFill.fillAmount = Mathf.InverseLerp(0, firstMissionDuration, remainingDuration);
+                remainingDuration--;
+                yield return new WaitForSeconds(1f);
                 yield return null;
             }
             OnEnd();
         }
 
-        private void OnEnd()
-        {
+        void OnEnd(){
             if(Dialogue.astroCounter == 2){
-                endMission1 = true;
-                // eli chyet3mal ki ykamal etache loula
+                // Mission 1 succeeded
                 FirstPersonController.canMove=false;
-                timerAstro.SetActive(false);
+                endFirstMission = true;
+                firstMissionTimer.SetActive(false);
                 scoreAstro.SetActive(false);
-                mission2.SetActive(true);
+                secondMission.SetActive(true);
             }
             else{
-                // eli chyet3mal ki youfa wa9t etache loula
+                // Mission 1 time out
                 FirstPersonController.canMove=false;
-                endGameTime = true;
+                endChapterTime = true;
                 Cursor.lockState = CursorLockMode.None;
                 Cursor.visible = true;
                 if(isMoon)
@@ -130,52 +106,64 @@ namespace StarterAssets {
             }
         }
 
-        private void Being2(int Second)
-        {
-            remainingDuration = Second;
+
+        void StartMission2(){
+            secondMission.SetActive(false);
+            scoreAstro.SetActive(false);
+            rockets.SetActive(true);
+            scoreRocket.SetActive(true);
+            FirstPersonController.canMove=true;
+            secondMissionTimer.SetActive(true);
+            remainingDuration = secondMissionDuration;
             StartCoroutine(UpdateTimer2());
         }
 
-        private IEnumerator UpdateTimer2()
-        {
-            while(remainingDuration >= 0 && ItemCollector.score<2 && ItemCollector.visitedRockets<3)
-            {
-                if (!Pause)
-                {
-                    TimerRocketsText.text = $"{remainingDuration / 60:00}:{remainingDuration % 60:00}";
-                    TimerRocketsFill.fillAmount = Mathf.InverseLerp(0, Duration2, remainingDuration);
-                    remainingDuration--;
-                    yield return new WaitForSeconds(1f);
-                }
+        IEnumerator UpdateTimer2(){
+            while(remainingDuration>=0 && ItemCollector.score<2 && ItemCollector.visitedRockets<3){
+                secondMissionTimerText.text = $"{remainingDuration / 60:00}:{remainingDuration % 60:00}";
+                secondMissionTimerFill.fillAmount = Mathf.InverseLerp(0, secondMissionDuration, remainingDuration);
+                remainingDuration--;
+                yield return new WaitForSeconds(1f);
                 yield return null;
             }
             OnEnd2();
         }
        
-        private void OnEnd2()
-        {
-            if(ItemCollector.score == 2){
-                // eli chyet3mal ki ykamal etache ethenya
+        void OnEnd2(){
+            if(ItemCollector.score==2){
+                // Mission 2 succeeded
                 FirstPersonController.canMove=false;
-                endMission2=true;
-                //leb9ia fel update
+                endSecondMission=true;
             }
             else if(ItemCollector.visitedRockets==3){
-                //eli chyet3mal ki youfaw rockets etache ethenya whoua mejebch 5
+                // Rockets number over
                 FirstPersonController.canMove=false;
-                timerRockets.SetActive(false);
-                scoreImage.SetActive(false);
-                Cursor.lockState = CursorLockMode.None;
-                Cursor.visible = true;
+                secondMissionTimer.SetActive(false);
+                scoreRocket.SetActive(false);
+                Cursor.lockState=CursorLockMode.None;
+                Cursor.visible=true;
                 SceneManager.LoadScene("scoreinf5");
             }
             else{
-                // eli chyet3mal ki youfa wa9t etache ethenya
+                // Mission 2 time out
                 FirstPersonController.canMove=false;
-                endGameTime = true;
+                endChapterTime=true;
+                Cursor.lockState=CursorLockMode.None;
+                Cursor.visible=true;
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+2);
+            }
+        }
+
+
+        void EndChapter(){
+            timeTest += 1 * Time.deltaTime;
+            if(timeTest>=2){
+                secondMissionTimer.SetActive(false);
+                scoreRocket.SetActive(false);
+                timeTest=0f;
                 Cursor.lockState = CursorLockMode.None;
                 Cursor.visible = true;
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 2);
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
             }
         }
     }

@@ -227,19 +227,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ded19cb9dbc9fa64ea47107714555d50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timerAstro: {fileID: 1204981967}
-  timerRockets: {fileID: 383077605}
   startImage: {fileID: 1117207410}
+  firstMissionDuration: 30
+  firstMissionTimer: {fileID: 1204981967}
+  firstMissionTimerFill: {fileID: 546026683}
+  firstMissionTimerText: {fileID: 1530750583}
   scoreAstro: {fileID: 179418204}
+  secondMission: {fileID: 1274053624}
+  secondMissionDuration: 30
   rockets: {fileID: 468146787}
-  scoreImage: {fileID: 459267928}
-  mission2: {fileID: 1274053624}
-  TimerAstroFill: {fileID: 546026683}
-  TimerAstroText: {fileID: 1530750583}
-  TimerRocketsFill: {fileID: 165346478}
-  TimerRocketsText: {fileID: 523366370}
-  Duration: 80
-  Duration2: 80
+  secondMissionTimer: {fileID: 383077605}
+  secondMissionTimerFill: {fileID: 165346478}
+  secondMissionTimerText: {fileID: 523366370}
+  scoreRocket: {fileID: 459267928}
 --- !u!114 &93990796
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -252,14 +252,90 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85ee55cf95c78534ebf9b5ae2b678da1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  obj: {fileID: 1870050915}
-  win: {fileID: 1877047692}
-  loose: {fileID: 393518332}
-  timeOver: {fileID: 0}
-  Duration: 30
-  uiFill: {fileID: 1380403484}
-  countdownText: {fileID: 948367268}
-  scoreText: {fileID: 1593984117}
+  duration: 2
+  quizPanel: {fileID: 1870050915}
+  correctAnswer: {fileID: 1877047692}
+  wrongAnswer: {fileID: 393518332}
+  timeOver: {fileID: 138386943}
+  quizTimerFill: {fileID: 1380403484}
+  quizTimerText: {fileID: 948367268}
+  scoreRocketText: {fileID: 1593984117}
+--- !u!1 &138386943
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 138386944}
+  - component: {fileID: 138386946}
+  - component: {fileID: 138386945}
+  m_Layer: 5
+  m_Name: TimeOver
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &138386944
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 138386943}
+  m_LocalRotation: {x: -0.0008218574, y: -0, z: -0, w: 0.9999997}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 9.2998295, y: 1.46748, z: 1}
+  m_Children:
+  - {fileID: 1205014518}
+  m_Father: {fileID: 1396988791}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: -0.094, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchoredPosition: {x: -0.99938965, y: -316}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &138386945
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 138386943}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.5754717, g: 0.5754717, b: 0.5754717, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300002, guid: d61d12d2d79f7244e9f4de798743e099, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &138386946
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 138386943}
+  m_CullTransparentMesh: 1
 --- !u!1 &165346476
 GameObject:
   m_ObjectHideFlags: 0
@@ -272,7 +348,7 @@ GameObject:
   - component: {fileID: 165346479}
   - component: {fileID: 165346478}
   m_Layer: 5
-  m_Name: TimerRocketsFill
+  m_Name: SecondMissionTimerFill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1212,7 +1288,7 @@ GameObject:
   - component: {fileID: 383077609}
   - component: {fileID: 383077608}
   m_Layer: 5
-  m_Name: TimerRockets
+  m_Name: SecondMissionTimer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1294,7 +1370,7 @@ GameObject:
   - component: {fileID: 393518335}
   - component: {fileID: 393518334}
   m_Layer: 5
-  m_Name: looser
+  m_Name: WrongAnswer
   m_TagString: ImageBox1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1402,7 +1478,7 @@ GameObject:
   - component: {fileID: 459267931}
   - component: {fileID: 459267930}
   m_Layer: 5
-  m_Name: scoreImage
+  m_Name: ScoreRocket
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1517,7 +1593,7 @@ GameObject:
   - component: {fileID: 523366371}
   - component: {fileID: 523366370}
   m_Layer: 5
-  m_Name: TimerRocketsText
+  m_Name: SecondMissionTimerText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1626,7 +1702,7 @@ GameObject:
   - component: {fileID: 546026684}
   - component: {fileID: 546026683}
   m_Layer: 5
-  m_Name: TimerAstroFill
+  m_Name: FirstMissionTimerFill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7533,14 +7609,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85ee55cf95c78534ebf9b5ae2b678da1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  obj: {fileID: 1870050915}
-  win: {fileID: 1877047692}
-  loose: {fileID: 393518332}
+  duration: 0
+  quizPanel: {fileID: 0}
+  correctAnswer: {fileID: 0}
+  wrongAnswer: {fileID: 0}
   timeOver: {fileID: 0}
-  Duration: 30
-  uiFill: {fileID: 1380403484}
-  countdownText: {fileID: 948367268}
-  scoreText: {fileID: 1593984117}
+  quizTimerFill: {fileID: 0}
+  quizTimerText: {fileID: 0}
+  scoreRocketText: {fileID: 0}
 --- !u!1 &922641544
 GameObject:
   m_ObjectHideFlags: 0
@@ -7825,7 +7901,7 @@ GameObject:
   - component: {fileID: 948367269}
   - component: {fileID: 948367268}
   m_Layer: 5
-  m_Name: TimerText
+  m_Name: QuizTimerText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8641,7 +8717,7 @@ GameObject:
   - component: {fileID: 1204981970}
   - component: {fileID: 1204981969}
   m_Layer: 5
-  m_Name: TimerAstro
+  m_Name: FirstMissionTimer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8706,6 +8782,85 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1204981967}
   m_CullTransparentMesh: 1
+--- !u!1 &1205014517
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1205014518}
+  - component: {fileID: 1205014520}
+  - component: {fileID: 1205014519}
+  m_Layer: 5
+  m_Name: timeOverText
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1205014518
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1205014517}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 10}
+  m_LocalScale: {x: 0.06502862, y: 0.6986817, z: 6.5645}
+  m_Children: []
+  m_Father: {fileID: 138386944}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: -2.3999}
+  m_SizeDelta: {x: 160, y: 30}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1205014519
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1205014517}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 2100000, guid: e3265ab4bf004d28a9537516768c1c75, type: 3}
+  m_Color: {r: 0.7830189, g: 0.46960172, b: 0.049246386, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: 58b647c5b2ec4184e9a07a561cdf0644, type: 3}
+    m_FontSize: 100
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 0
+    m_MaxSize: 300
+    m_Alignment: 4
+    m_AlignByGeometry: 1
+    m_RichText: 1
+    m_HorizontalOverflow: 1
+    m_VerticalOverflow: 1
+    m_LineSpacing: 1
+  m_Text: Time Out !
+--- !u!222 &1205014520
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1205014517}
+  m_CullTransparentMesh: 0
 --- !u!4 &1205493857 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4008215048926364, guid: 4f2ec922dde4f9447863a1de42b853f1, type: 3}
@@ -8799,7 +8954,7 @@ GameObject:
   - component: {fileID: 1274053627}
   - component: {fileID: 1274053626}
   m_Layer: 5
-  m_Name: Mission2
+  m_Name: SecondMission
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9007,7 +9162,7 @@ GameObject:
   - component: {fileID: 1378644655}
   - component: {fileID: 1378644654}
   m_Layer: 5
-  m_Name: Timer
+  m_Name: QuizTimer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9084,7 +9239,7 @@ GameObject:
   - component: {fileID: 1380403485}
   - component: {fileID: 1380403484}
   m_Layer: 5
-  m_Name: TimerFill
+  m_Name: QuizTimerFill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9328,6 +9483,7 @@ RectTransform:
   - {fileID: 1117207411}
   - {fileID: 1274053625}
   - {fileID: 383077606}
+  - {fileID: 138386944}
   - {fileID: 1762724175}
   m_Father: {fileID: 0}
   m_RootOrder: 6
@@ -9792,7 +9948,7 @@ GameObject:
   - component: {fileID: 1530750584}
   - component: {fileID: 1530750583}
   m_Layer: 5
-  m_Name: TimerAstroText
+  m_Name: FirstMissionTimerText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10065,7 +10221,7 @@ GameObject:
   - component: {fileID: 1593984118}
   - component: {fileID: 1593984117}
   m_Layer: 5
-  m_Name: score
+  m_Name: ScoreRocketText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10617,10 +10773,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd60e3b615984b64684635f5a3e8c959, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogueSO: {fileID: 11400000, guid: 00417a7e67a981b47b532cbaf396bc03, type: 2}
-  isOnDial: 0
-  currentDialogue: 0
-  scoreAstro: {fileID: 179418204}
+  dialogue:
+  - dlfknvefd
+  - mlkdnv
+  - mfk,ovf
+  isTalking: 0
   scoreAstroText: {fileID: 1104560828}
 --- !u!136 &1762306239
 CapsuleCollider:
@@ -10667,7 +10824,7 @@ RectTransform:
   m_Children:
   - {fileID: 2097427146}
   m_Father: {fileID: 1396988791}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
@@ -10795,10 +10952,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd60e3b615984b64684635f5a3e8c959, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogueSO: {fileID: 11400000, guid: 77cfc5ea58486274f90b69ca47471d52, type: 2}
-  isOnDial: 0
-  currentDialogue: 0
-  scoreAstro: {fileID: 179418204}
+  dialogue:
+  - Hello my name is Yeils
+  - Mars has two moons
+  - 'They''re named Phobos,  meaning fear '
+  - and Deimos, which is Greek for panic
+  - Mars is named after the Roman god of war
+  isTalking: 0
   scoreAstroText: {fileID: 1104560828}
 --- !u!136 &1789978923
 CapsuleCollider:
@@ -10992,10 +11152,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd60e3b615984b64684635f5a3e8c959, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogueSO: {fileID: 11400000, guid: c016fd578343a31429bd587a2f4c4224, type: 2}
-  isOnDial: 0
-  currentDialogue: 0
-  scoreAstro: {fileID: 179418204}
+  dialogue:
+  - hello king
+  - I'm your brother from pakistan
+  - Are you the KING ??
+  isTalking: 0
   scoreAstroText: {fileID: 1104560828}
 --- !u!136 &1851098748
 CapsuleCollider:
@@ -11139,7 +11300,7 @@ GameObject:
   - component: {fileID: 1870050918}
   - component: {fileID: 1870050917}
   m_Layer: 5
-  m_Name: quiz1
+  m_Name: QuizPanel
   m_TagString: quiz1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11219,7 +11380,7 @@ GameObject:
   - component: {fileID: 1877047695}
   - component: {fileID: 1877047694}
   m_Layer: 5
-  m_Name: winner
+  m_Name: CorrectAnswer
   m_TagString: ImageBox1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11423,10 +11584,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd60e3b615984b64684635f5a3e8c959, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogueSO: {fileID: 11400000, guid: 4d59be0a6c2a3cc4bacb20c6500fb294, type: 2}
-  isOnDial: 0
-  currentDialogue: 0
-  scoreAstro: {fileID: 179418204}
+  dialogue:
+  - Hello my name is Martina
+  - Rusted iron particles in Mars's rocks
+  - give the planet a red hue.
+  isTalking: 0
   scoreAstroText: {fileID: 1104560828}
 --- !u!136 &1940387779
 CapsuleCollider:
@@ -11464,10 +11626,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd60e3b615984b64684635f5a3e8c959, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogueSO: {fileID: 11400000, guid: 777099b3555f11043ae10f699419a78f, type: 2}
-  isOnDial: 0
-  currentDialogue: 0
-  scoreAstro: {fileID: 179418204}
+  dialogue:
+  - azeerr
+  - lkneidfvmlin
+  isTalking: 0
   scoreAstroText: {fileID: 1104560828}
 --- !u!136 &1951397333
 CapsuleCollider:
@@ -11599,7 +11761,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1973225408}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f2e401e99a993ee46854fa6dd41a5306, type: 3}
   m_Name: 
