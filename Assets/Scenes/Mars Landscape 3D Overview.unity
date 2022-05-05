@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 297098016}
-  m_IndirectSpecularColor: {r: 0.211435, g: 0.112969115, b: 0.099511996, a: 1}
+  m_IndirectSpecularColor: {r: 0.21143526, g: 0.112969376, b: 0.09951227, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -227,7 +227,7 @@ MonoBehaviour:
   firstMissionTimerText: {fileID: 1530750583}
   scoreAstro: {fileID: 179418204}
   secondMission: {fileID: 1274053624}
-  secondMissionDuration: 200
+  secondMissionDuration: 30
   rockets: {fileID: 468146787}
   secondMissionTimer: {fileID: 383077605}
   secondMissionTimerFill: {fileID: 165346478}
@@ -245,7 +245,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85ee55cf95c78534ebf9b5ae2b678da1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Duration: 30
+  duration: 20
   quizPanel: {fileID: 1870050915}
   correctAnswer: {fileID: 1877047692}
   wrongAnswer: {fileID: 393518332}
@@ -7704,7 +7704,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85ee55cf95c78534ebf9b5ae2b678da1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Duration: 30
+  duration: 0
   quizPanel: {fileID: 0}
   correctAnswer: {fileID: 0}
   wrongAnswer: {fileID: 0}

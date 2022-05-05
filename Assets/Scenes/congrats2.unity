@@ -645,8 +645,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 469659290}
-        m_TargetAssemblyTypeName: sceneswitcher, Assembly-CSharp
-        m_MethodName: Gotolab
+        m_TargetAssemblyTypeName: StarterAssets.sceneswitcher, Assembly-CSharp
+        m_MethodName: unlockmars
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

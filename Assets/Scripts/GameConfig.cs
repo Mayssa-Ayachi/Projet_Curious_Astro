@@ -100,9 +100,9 @@ namespace StarterAssets {
                 Cursor.lockState = CursorLockMode.None;
                 Cursor.visible = true;
                 if(isMoon)
-                    SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 5);
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+7);
                 else
-                    SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 2);
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+2);
             }
         }
 
@@ -150,7 +150,11 @@ namespace StarterAssets {
                 endChapterTime=true;
                 Cursor.lockState=CursorLockMode.None;
                 Cursor.visible=true;
+                if(isMoon)
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+7);
+                else
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+2);
+               
             }
         }
 

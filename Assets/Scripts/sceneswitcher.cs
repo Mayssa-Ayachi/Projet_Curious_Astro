@@ -16,7 +16,7 @@ public void playGame()
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 3);
     }
     public void Back()
-    { SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 4); }
+    { SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 3); }
     public void Quit()
     {
         Application.Quit();
@@ -31,13 +31,18 @@ public void playGame()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 3);
     }
-    public void Next(){
-    SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 2);
- 
-    }   
-    public void Gotolab(){
-     SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex +1);
+      
+      
+    //succes mission mars
+    public void backtomenumars(){ 
+     SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex -9);
     }
+    public void Gotolab(){//succes mission mars
+     SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex -2);
+    }
+     public void unlockmars(){
+    SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex +1);
+     }
      public void retry(){
         if(GameConfig.isMoon)
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex -5);
@@ -49,9 +54,16 @@ public void playGame()
        public void backtomenu2(){//mta3 lmoon
       SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex -6);}
       public void tryagain(){//mta3 scoreinf5 f moon
-      SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex -6);}
+      if(GameConfig.isMoon)
+      SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex -6);
+      else 
+      SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex -3);}
       public void gomenumoon(){//mta3 scoreinf5 f moon
       SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex -11);}
+      public void playagainmoon(){//mta3 time out moon
+      SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex -7);}
+      public void backmenumoon(){//mta3 time out moon
+      SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex -12);}
 
 }
 }
