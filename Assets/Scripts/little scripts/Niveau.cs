@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement; 
 
 public class Niveau : MonoBehaviour
-{
+{/*
     public string NomSceneSuivante; 
 
     public void AllerAuNiveau(){
@@ -13,5 +13,5 @@ public class Niveau : MonoBehaviour
 
     public void OnTriggerEnter(Collider other){
         AllerAuNiveau();
-    }
+    }*/
 }

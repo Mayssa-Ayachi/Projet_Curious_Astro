@@ -47,6 +47,15 @@ TagManager:
   - winText
   - looseImage
   - looseText
+  - parler1
+  - text1
+  - TrackingObject
+  - Robot2
+  - Robot1
+  - Robot3
+  - Robot4
+  - moon
+  - mars
   layers:
   - Default
   - TransparentFX

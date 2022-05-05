@@ -856,11 +856,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 320b1c2af77554f99a1658df4a6d3d5c, type: 3}
---- !u!1 &407789717 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 399063149123741488, guid: 320b1c2af77554f99a1658df4a6d3d5c, type: 3}
-  m_PrefabInstance: {fileID: 407789716}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &442450205
 GameObject:
   m_ObjectHideFlags: 0
@@ -1070,6 +1065,10 @@ PrefabInstance:
     - target: {fileID: 1408581670749804, guid: f9a741bb8762344c6a2a9cb4217ef728, type: 3}
       propertyPath: m_Name
       value: Moon
+      objectReference: {fileID: 0}
+    - target: {fileID: 1408581670749804, guid: f9a741bb8762344c6a2a9cb4217ef728, type: 3}
+      propertyPath: m_TagString
+      value: moon
       objectReference: {fileID: 0}
     - target: {fileID: 4693579709242440, guid: f9a741bb8762344c6a2a9cb4217ef728, type: 3}
       propertyPath: m_RootOrder
@@ -1843,19 +1842,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1408581670749804, guid: f9a741bb8762344c6a2a9cb4217ef728, type: 3}
   m_PrefabInstance: {fileID: 722305944}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1281525027
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1281525026}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: abc9f0bc2ed253d4a96a96aa3ca2553b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  NomSceneSuivante: lunar scene
 --- !u!135 &1281525028
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1878,10 +1864,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1281525026}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: def250baff28c6c4e8db81b50fcbd52b, type: 3}
+  m_Script: {fileID: 11500000, guid: 009978c9787e8424089089419add35a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speedX: 0.02
+  speedX: 0
   speedY: 0.1
   speedZ: 0
 --- !u!1 &1438444378 stripped
@@ -1936,9 +1922,8 @@ MonoBehaviour:
   CinemachineCameraTarget: {fileID: 1438444378}
   TopClamp: 90
   BottomClamp: -90
-  Robot1: {fileID: 407789717}
-  checkAstro: {fileID: 1510525008}
-  whatisAstro:
+  checkRobot: {fileID: 1510525008}
+  whatisRobot:
     serializedVersion: 2
     m_Bits: 8
 --- !u!212 &1456148159
@@ -3270,24 +3255,6 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 453084650579209848, guid: 035bf1ba97d19214580cfe6f5a29fdc3, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 035bf1ba97d19214580cfe6f5a29fdc3, type: 3}
---- !u!1 &2018300229 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1288793558353234, guid: 1818e1a170ef94c3aacee2ba50057521, type: 3}
-  m_PrefabInstance: {fileID: 1003348593}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &2018300230
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2018300229}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: abc9f0bc2ed253d4a96a96aa3ca2553b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  NomSceneSuivante: Mars Landscape 3D Overview
 --- !u!4 &2018300233 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4387678931267766, guid: 1818e1a170ef94c3aacee2ba50057521, type: 3}

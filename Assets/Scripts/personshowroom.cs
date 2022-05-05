@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 #if ENABLE_INPUT_SYSTEM && STARTER_ASSETS_PACKAGES_CHECKED
 using UnityEngine.InputSystem;
 #endif
@@ -75,18 +76,12 @@ namespace StarterAssets
 		private bool IsCurrentDeviceMouse => _playerInput.currentControlScheme == "KeyboardMouse";
 
 		//set time to switch between levels
-		float timeTest = 0f; 
-		bool a=true;
-		public GameObject pod;
-		public GameObject mars;
-		public GameObject moon;
-
-		 
-		//bool var=false;
-
-
-
-
+		[SerializeField] GameObject pod;
+		[SerializeField] GameObject mars;
+		[SerializeField] GameObject moon;
+		float timeTest; 
+		bool once;
+		
 
 		private void Awake()
 		{
@@ -99,6 +94,8 @@ namespace StarterAssets
 
 		private void Start()
 		{
+			timeTest = 0f; 
+			once = true;
 			_controller = GetComponent<CharacterController>();
 			_input = GetComponent<StarterAssetsInputs>();
 			_playerInput = GetComponent<PlayerInput>();
@@ -115,28 +112,25 @@ namespace StarterAssets
 			GroundedCheck();
 			Move();
 
-			if(a){
+			if(once){
 				timeTest += 1 * Time.deltaTime;
 				if(timeTest>=17){
-                    a=false;
+                    once=false;
                     timeTest=0f;
 					pod.GetComponent<SphereCollider>().isTrigger=true;
                 }
 			}
 		} 
 
+		public void OnTriggerEnter(Collider other){
+        	SceneManager.LoadScene("loadinglabo");
+    	}
+
 		private void LateUpdate()
 		{
 			CameraRotation();
 		}
 
-
-		/*private void OnTriggerEnter(Collider other){
-			if(other.gameObject.tag=="Robot1"){
-				Robot1.GetComponent<SphereCollider>().isTrigger=true;
-				Debug.Log("hello");
-			}
-		}*/
 		private void GroundedCheck()
 		{
 			// set sphere position, with offset

@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 #if ENABLE_INPUT_SYSTEM && STARTER_ASSETS_PACKAGES_CHECKED
 using UnityEngine.InputSystem;
 #endif
@@ -75,17 +76,9 @@ namespace StarterAssets
 		private bool IsCurrentDeviceMouse => _playerInput.currentControlScheme == "KeyboardMouse";
 
 		//set time to switch between levels
-	 
-		 
-
-		public GameObject Robot1;
-
-		public Transform checkAstro;
-		public LayerMask whatisAstro;
-		bool var=false;
-
-
-
+		[SerializeField] Transform checkRobot;
+		[SerializeField] LayerMask whatisRobot;
+		bool wasFar;
 
 
 		private void Awake()
@@ -104,6 +97,7 @@ namespace StarterAssets
 			_playerInput = GetComponent<PlayerInput>();
 			Cursor.lockState = CursorLockMode.None;
             Cursor.visible = false;
+			wasFar = true;
 			// reset our timeouts on start
 			_jumpTimeoutDelta = JumpTimeout;
 			_fallTimeoutDelta = FallTimeout;
@@ -114,20 +108,23 @@ namespace StarterAssets
 			JumpAndGravity();
 			GroundedCheck();
 			Move();
+			ListeningToRobots();
+		} 
 
-			Collider[] hitColliders = Physics.OverlapSphere(checkAstro.position,0.5f,whatisAstro);
-			if(hitColliders.Length!=0 && var==false){
+		private void ListeningToRobots(){
+			Collider[] RobotColliders = Physics.OverlapSphere(checkRobot.position,0.5f,whatisRobot);
+			if(RobotColliders.Length!=0 && wasFar==true){
 				GameObject.FindGameObjectWithTag("parler1").GetComponent<Image>().enabled=true;
 				GameObject.FindGameObjectWithTag("text1").GetComponent<Text>().enabled=true;
 				if(_input.etkalam==true){
-					var=true;
-					hitColliders[0].GetComponent<AudioSource>().enabled=true;
+					wasFar=false;
+					RobotColliders[0].GetComponent<AudioSource>().enabled=true;
 					GameObject.FindGameObjectWithTag("parler1").GetComponent<Image>().enabled=false;
 					GameObject.FindGameObjectWithTag("text1").GetComponent<Text>().enabled=false;
 				}
 			}
-			if(hitColliders.Length==0){
-				var=false;
+			if(RobotColliders.Length==0){
+				wasFar=true;
 				GameObject.FindGameObjectWithTag("Robot1").GetComponent<AudioSource>().enabled=false;
 				GameObject.FindGameObjectWithTag("Robot2").GetComponent<AudioSource>().enabled=false;
 				GameObject.FindGameObjectWithTag("Robot3").GetComponent<AudioSource>().enabled=false;
@@ -135,7 +132,14 @@ namespace StarterAssets
 				GameObject.FindGameObjectWithTag("parler1").GetComponent<Image>().enabled=false;
 				GameObject.FindGameObjectWithTag("text1").GetComponent<Text>().enabled=false;
 			}
-		} 
+		}
+
+		public void OnTriggerEnter(Collider other){
+			if(other.gameObject.CompareTag("moon"))
+        		SceneManager.LoadScene("Lunar Scene");
+			if(other.gameObject.CompareTag("mars"))
+				SceneManager.LoadScene("Mars Landscape 3D Overview");
+    	}
 
 		private void LateUpdate()
 		{

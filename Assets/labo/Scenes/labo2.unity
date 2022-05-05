@@ -413,19 +413,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1288793558353234, guid: 1818e1a170ef94c3aacee2ba50057521, type: 3}
   m_PrefabInstance: {fileID: 1902787429}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &175827719
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 175827718}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: abc9f0bc2ed253d4a96a96aa3ca2553b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  NomSceneSuivante: Mars Landscape 3D Overview
 --- !u!114 &175827720
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -435,10 +422,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 175827718}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: def250baff28c6c4e8db81b50fcbd52b, type: 3}
+  m_Script: {fileID: 11500000, guid: 009978c9787e8424089089419add35a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speedX: 0.02
+  speedX: 0
   speedY: 0.1
   speedZ: 0
 --- !u!1001 &230544453
@@ -691,19 +678,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1408581670749804, guid: f9a741bb8762344c6a2a9cb4217ef728, type: 3}
   m_PrefabInstance: {fileID: 1507567412}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &264223735
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 264223734}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: abc9f0bc2ed253d4a96a96aa3ca2553b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  NomSceneSuivante: lunar scene
 --- !u!135 &264223736
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -726,10 +700,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 264223734}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: def250baff28c6c4e8db81b50fcbd52b, type: 3}
+  m_Script: {fileID: 11500000, guid: 009978c9787e8424089089419add35a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speedX: 0.02
+  speedX: 0
   speedY: 0.1
   speedZ: 0
 --- !u!1 &271730552 stripped
@@ -1613,9 +1587,8 @@ MonoBehaviour:
   CinemachineCameraTarget: {fileID: 551391629}
   TopClamp: 90
   BottomClamp: -90
-  Robot1: {fileID: 1475508941}
-  checkAstro: {fileID: 610707511}
-  whatisAstro:
+  checkRobot: {fileID: 610707511}
+  whatisRobot:
     serializedVersion: 2
     m_Bits: 8
 --- !u!212 &692041951
@@ -2392,11 +2365,6 @@ CapsuleCollider:
   m_Height: 2.0702047
   m_Direction: 1
   m_Center: {x: -6.070234e-11, y: 0.8879585, z: 7.366724e-12}
---- !u!1 &1475508941 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 399063149123741488, guid: 320b1c2af77554f99a1658df4a6d3d5c, type: 3}
-  m_PrefabInstance: {fileID: 123977923}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1507567412
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2407,6 +2375,10 @@ PrefabInstance:
     - target: {fileID: 1408581670749804, guid: f9a741bb8762344c6a2a9cb4217ef728, type: 3}
       propertyPath: m_Name
       value: Moon
+      objectReference: {fileID: 0}
+    - target: {fileID: 1408581670749804, guid: f9a741bb8762344c6a2a9cb4217ef728, type: 3}
+      propertyPath: m_TagString
+      value: moon
       objectReference: {fileID: 0}
     - target: {fileID: 4693579709242440, guid: f9a741bb8762344c6a2a9cb4217ef728, type: 3}
       propertyPath: m_RootOrder
@@ -3214,6 +3186,10 @@ PrefabInstance:
     - target: {fileID: 1288793558353234, guid: 1818e1a170ef94c3aacee2ba50057521, type: 3}
       propertyPath: m_Name
       value: Mars
+      objectReference: {fileID: 0}
+    - target: {fileID: 1288793558353234, guid: 1818e1a170ef94c3aacee2ba50057521, type: 3}
+      propertyPath: m_TagString
+      value: mars
       objectReference: {fileID: 0}
     - target: {fileID: 4387678931267766, guid: 1818e1a170ef94c3aacee2ba50057521, type: 3}
       propertyPath: m_RootOrder

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 297098016}
-  m_IndirectSpecularColor: {r: 0.0020626625, g: 0.0019481757, b: 0.0021163435, a: 1}
+  m_IndirectSpecularColor: {r: 0.0020639834, g: 0.0019482663, b: 0.0021174347, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -228,13 +228,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startImage: {fileID: 1117207410}
-  firstMissionDuration: 30
+  firstMissionDuration: 120
   firstMissionTimer: {fileID: 1204981967}
   firstMissionTimerFill: {fileID: 546026683}
   firstMissionTimerText: {fileID: 1530750583}
   scoreAstro: {fileID: 179418204}
   secondMission: {fileID: 1274053624}
-  secondMissionDuration: 40
+  secondMissionDuration: 120
   rockets: {fileID: 468146787}
   secondMissionTimer: {fileID: 383077605}
   secondMissionTimerFill: {fileID: 165346478}
@@ -2568,7 +2568,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: NestedParent_Unpack
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7685886781334439055, guid: 035bf1ba97d19214580cfe6f5a29fdc3, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 035bf1ba97d19214580cfe6f5a29fdc3, type: 3}
 --- !u!1 &856735520 stripped
 GameObject:
@@ -11766,7 +11767,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2e401e99a993ee46854fa6dd41a5306, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1900499674}
 --- !u!1 &1988680126
 GameObject:
   m_ObjectHideFlags: 0
