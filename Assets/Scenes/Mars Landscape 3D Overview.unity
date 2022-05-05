@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 297098016}
-  m_IndirectSpecularColor: {r: 0.21143526, g: 0.112969376, b: 0.09951227, a: 1}
+  m_IndirectSpecularColor: {r: 0.211435, g: 0.112969115, b: 0.099511996, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1185,10 +1185,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd60e3b615984b64684635f5a3e8c959, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogueSO: {fileID: 11400000, guid: 77cfc5ea58486274f90b69ca47471d52, type: 2}
-  isOnDial: 0
-  currentDialogue: 0
-  scoreAstro: {fileID: 179418204}
+  dialogue:
+  - Hello my name is Yeils
+  - Mars has two moons
+  - 'They''re named Phobos,  meaning fear '
+  - and Deimos, which is Greek for panic
+  - Mars is named after the Roman god of war
+  isTalking: 0
   scoreAstroText: {fileID: 1104560828}
 --- !u!4 &353496255 stripped
 Transform:
@@ -2101,10 +2104,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd60e3b615984b64684635f5a3e8c959, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogueSO: {fileID: 11400000, guid: c016fd578343a31429bd587a2f4c4224, type: 2}
-  isOnDial: 0
-  currentDialogue: 0
-  scoreAstro: {fileID: 1104560826}
+  dialogue:
+  - hello king
+  - I'm your brother from pakistan
+  - Are you the KING ??
+  isTalking: 0
   scoreAstroText: {fileID: 1104560828}
 --- !u!1 &591755123
 GameObject:
@@ -7744,10 +7748,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd60e3b615984b64684635f5a3e8c959, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogueSO: {fileID: 11400000, guid: 777099b3555f11043ae10f699419a78f, type: 2}
-  isOnDial: 0
-  currentDialogue: 0
-  scoreAstro: {fileID: 1104560826}
+  dialogue:
+  - azeerr
+  - lkneidfvmlin
+  isTalking: 0
   scoreAstroText: {fileID: 1104560828}
 --- !u!1 &922641544
 GameObject:
@@ -10440,10 +10444,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd60e3b615984b64684635f5a3e8c959, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogueSO: {fileID: 11400000, guid: 4d59be0a6c2a3cc4bacb20c6500fb294, type: 2}
-  isOnDial: 0
-  currentDialogue: 0
-  scoreAstro: {fileID: 1104560826}
+  dialogue:
+  - Hello my name is Martina
+  - Rusted iron particles in Mars's rocks
+  - give the planet a red hue.
+  isTalking: 0
   scoreAstroText: {fileID: 1104560828}
 --- !u!136 &1708851458
 CapsuleCollider:
@@ -11037,10 +11042,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd60e3b615984b64684635f5a3e8c959, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogueSO: {fileID: 11400000, guid: 00417a7e67a981b47b532cbaf396bc03, type: 2}
-  isOnDial: 0
-  currentDialogue: 0
-  scoreAstro: {fileID: 1104560826}
+  dialogue:
+  - dlfknvefd
+  - mlkdnv
+  - mfk,ovf
+  isTalking: 0
   scoreAstroText: {fileID: 1104560828}
 --- !u!1001 &1853804767
 PrefabInstance:

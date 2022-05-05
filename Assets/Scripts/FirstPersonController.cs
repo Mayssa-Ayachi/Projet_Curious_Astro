@@ -74,13 +74,15 @@ namespace StarterAssets
 		
 		private bool IsCurrentDeviceMouse => _playerInput.currentControlScheme == "KeyboardMouse";
 
-		//=====dialogue=====
+		// talking with astro
 		public Transform checkAstro;
 		public LayerMask whatisAstro;
-		public bool isAstro=false;
-		public bool verif_astro=false;
-		public bool test_astro=true;
-		public static bool canMove=false;
+		public static bool canMove;
+
+		bool isAstro;
+		bool EkeyWasPressed;
+		bool astroWasFar;
+		
 
 		private void Awake()
 		{
@@ -93,7 +95,6 @@ namespace StarterAssets
 
 		private void Start()
 		{
-			canMove=false;
 			_controller = GetComponent<CharacterController>();
 			_input = GetComponent<StarterAssetsInputs>();
 			_playerInput = GetComponent<PlayerInput>();
@@ -101,56 +102,50 @@ namespace StarterAssets
 			// reset our timeouts on start
 			_jumpTimeoutDelta = JumpTimeout;
 			_fallTimeoutDelta = FallTimeout;
+
+			//talking with astro
+			canMove=false;
 		}
 
 		private void Update()
 		{
 			JumpAndGravity();
 			GroundedCheck();
-			if(canMove){Move();}
+			if(canMove){
+				Move();
+			}
 
-			//bch ynajam ya7ki ma3 les astro
-			Collider[] hitColliders = Physics.OverlapSphere(checkAstro.position,0.5f,whatisAstro);
-			if(hitColliders.Length==0 || GameConfig.endGameTime || GameConfig.endMission1){
+			//talking with astro
+			Collider[] astroColliders = Physics.OverlapSphere(checkAstro.position,0.5f,whatisAstro);
+			if(astroColliders.Length==0 || GameConfig.endGameTime || GameConfig.endMission1){
 				isAstro=false;
-				GameObject.FindGameObjectWithTag("ImageBox1").GetComponent<Image>().enabled=false;
-				GameObject.FindGameObjectWithTag("Astronaut1").GetComponent<Dialogue>().isOnDial=false;
-				GameObject.FindGameObjectWithTag("Astronaut1").GetComponent<Dialogue>().currentDialogue=0;
-				GameObject.FindGameObjectWithTag("DialogueBox1").GetComponent<Text>().text="";
+				GameObject.FindGameObjectWithTag("Astronaut1").GetComponent<Dialogue>().Initialize();
 				GameObject.FindGameObjectWithTag("E1").GetComponent<Image>().enabled=false;
 				GameObject.FindGameObjectWithTag("Text1").GetComponent<Text>().enabled = false;
-				test_astro=true;
+				astroWasFar=true;
 			}
 			else
 				isAstro=true;
-			if(isAstro && test_astro){
+
+			if(isAstro && astroWasFar){
 				GameObject.FindGameObjectWithTag("E1").GetComponent<Image>().enabled = true;
 				GameObject.FindGameObjectWithTag("Text1").GetComponent<Text>().enabled = true;
 			}
 			if(!_input.etkalam){
-				verif_astro=false;
+				EkeyWasPressed=false;
 			}
 			else{
 				GameObject.FindGameObjectWithTag("E1").GetComponent<Image>().enabled=false;
 				GameObject.FindGameObjectWithTag("Text1").GetComponent<Text>().enabled = false;
-				test_astro=false;
+				astroWasFar=false;
 			}
-			if(isAstro && _input.etkalam && !verif_astro){
-				verif_astro=true;
-				Collider[] Astronaut = Physics.OverlapSphere(checkAstro.position, 10f, whatisAstro);
-				foreach (Collider item in Astronaut){
-					if(item.GetComponent<Dialogue>().isOnDial)
-						item.GetComponent<Dialogue>().NextLine();
-					else{
-						GameObject.FindGameObjectWithTag("ImageBox1").GetComponent<Image>().enabled=true;
-						item.GetComponent<Dialogue>().StartDialogue();
-					}
-					if(!item.GetComponent<Dialogue>().isOnDial){
-						verif_astro = true;
-						GameObject.FindGameObjectWithTag("ImageBox1").GetComponent<Image>().enabled=false;
-					}
+			if(isAstro && _input.etkalam && !EkeyWasPressed){
+				EkeyWasPressed=true;
+				if(!astroColliders[0].GetComponent<Dialogue>().isTalking)
+					astroColliders[0].GetComponent<Dialogue>().StartDialogue();
+				else
+					astroColliders[0].GetComponent<Dialogue>().NextLine();
 				}
-			}
 		}
 
 		private void LateUpdate(){

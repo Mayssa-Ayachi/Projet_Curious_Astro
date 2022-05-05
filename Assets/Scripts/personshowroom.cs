@@ -82,7 +82,7 @@ namespace StarterAssets
 		public GameObject moon;
 
 		 
-		bool var=false;
+		//bool var=false;
 
 
 

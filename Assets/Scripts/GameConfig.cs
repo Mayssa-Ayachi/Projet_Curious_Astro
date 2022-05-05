@@ -40,7 +40,7 @@ namespace StarterAssets {
 
         private void Start()
         {
-            Dialogue.astro_counter=0;
+            Dialogue.astroCounter=0;
             ItemCollector.score=0;
             ItemCollector.visitedRockets=0;
             _input = GetComponent<StarterAssetsInputs>();
@@ -93,7 +93,7 @@ namespace StarterAssets {
 
         private IEnumerator UpdateTimer()
         {
-            while(remainingDuration >= 0 && Dialogue.astro_counter<2)
+            while(remainingDuration >= 0 && Dialogue.astroCounter<2)
             {
                 if (!Pause)
                 {
@@ -109,7 +109,7 @@ namespace StarterAssets {
 
         private void OnEnd()
         {
-            if(Dialogue.astro_counter == 2){
+            if(Dialogue.astroCounter == 2){
                 endMission1 = true;
                 // eli chyet3mal ki ykamal etache loula
                 FirstPersonController.canMove=false;

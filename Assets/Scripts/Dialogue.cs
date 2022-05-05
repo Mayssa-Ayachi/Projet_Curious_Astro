@@ -3,60 +3,77 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Dialogue : MonoBehaviour
-{
-    public DialogueSO dialogueSO;
-    public bool isOnDial = false;
-    public int currentDialogue;
+public class Dialogue : MonoBehaviour {
+    public string[] dialogue;
+    public bool isTalking;
+    public Text scoreAstroText;
+    public static int astroCounter = 0;
+
+    int dialogueIndex;
+    Image imageBox;
     Text textBox;
-    public GameObject scoreAstro ;
-    [SerializeField] Text scoreAstroText;
-    public static int astro_counter = 0;
     bool once1=true;
     bool once2=true;
     bool once3=true;
     bool once4=true;
     bool once5=true;
 
-    
-    public void StartDialogue()
-    {
+
+    public void Start(){
+        imageBox = GameObject.FindGameObjectWithTag("ImageBox1").GetComponent<Image>();
         textBox = GameObject.FindGameObjectWithTag("DialogueBox1").GetComponent<Text>();
-        textBox.text = dialogueSO.dialogue[currentDialogue];
-        isOnDial = true;
     }
 
-    public void NextLine()
-    {
-	    if(isOnDial && currentDialogue != dialogueSO.dialogue.Length - 1)
-	    {
-		    currentDialogue++;
-		    textBox.text = dialogueSO.dialogue[currentDialogue];
-	    }else if(isOnDial && currentDialogue == dialogueSO.dialogue.Length - 1)
-	    {
-		    isOnDial = false;
-		    currentDialogue = 0;
-		    textBox.text = "";
+    public void Initialize(){
+        isTalking=false;
+        dialogueIndex=0;
+        imageBox.enabled=false;
+        textBox.text = "";
+    }    
+
+    public void StartDialogue(){
+        imageBox.enabled=true;
+        textBox.text = dialogue[dialogueIndex];
+        isTalking = true;
+    }
+
+    public void NextLine(){
+	    if(isTalking && dialogueIndex != dialogue.Length - 1){
+		    dialogueIndex++;
+		    textBox.text = dialogue[dialogueIndex];
+	    }
+        else if(isTalking && dialogueIndex == dialogue.Length - 1){
             
-            if(once1){
-                if(dialogueSO.dialogue[0]=="Hello my name is Yeils"){astro_counter++;scoreAstroText.text = "Astronaut : "+astro_counter+"/5";}
-                    once1=false;
+		    Initialize();
+
+            if(dialogue[0]=="Hello my name is Yeils" && once1){
+                astroCounter++;
+                scoreAstroText.text = "Astronaut : "+astroCounter+"/5";
+                once1=false;
             }
-            if(once2){
-                if(dialogueSO.dialogue[0]=="hello king"){astro_counter++;scoreAstroText.text = "Astronaut : "+astro_counter+"/5";}
-                    once2=false;
+            
+            if(dialogue[0]=="hello king" && once2){
+                astroCounter++;
+                scoreAstroText.text = "Astronaut : "+astroCounter+"/5";
+                once2=false;
             }
-            if(once3){
-                if(dialogueSO.dialogue[0]=="Hello my name is Martina"){astro_counter++;scoreAstroText.text = "Astronaut : "+astro_counter+"/5";}
-                    once3=false;
+                    
+            if(dialogue[0]=="Hello my name is Martina" && once3){
+                astroCounter++;
+                scoreAstroText.text = "Astronaut : "+astroCounter+"/5";
+                once3=false;
             }
-            if(once4){
-                if(dialogueSO.dialogue[0]=="azeerr"){astro_counter++;scoreAstroText.text = "Astronaut : "+astro_counter+"/5";}
-                    once4=false;
+            
+            if(dialogue[0]=="azeerr" && once4){
+                astroCounter++;
+                scoreAstroText.text = "Astronaut : "+astroCounter+"/5";
+                once4=false;
             }
-            if(once5){
-                if(dialogueSO.dialogue[0]=="dlfknvefd"){astro_counter++;scoreAstroText.text = "Astronaut : "+astro_counter+"/5";}
-                    once5=false;
+                    
+            if(dialogue[0]=="dlfknvefd" && once5){
+                astroCounter++;
+                scoreAstroText.text = "Astronaut : "+astroCounter+"/5";
+                once5=false;
             }
         }
     }
