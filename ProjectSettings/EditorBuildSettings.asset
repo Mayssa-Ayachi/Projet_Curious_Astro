@@ -6,10 +6,10 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/labo/Scenes/labo.unity
+    path: Assets/Scenes/labo.unity
     guid: a6096f87c0bb6ae47affc4d9c4af4beb
   - enabled: 1
-    path: Assets/labo/Scenes/loadinglabo.unity
+    path: Assets/Scenes/loadinglabo.unity
     guid: 0b807c4f923f33a43a8dbb2afa65f5a3
   - enabled: 1
     path: Assets/Scenes/menu scene.unity
@@ -33,7 +33,7 @@ EditorBuildSettings:
     path: Assets/Scenes/congrats2.unity
     guid: dfb7c59b22c21a4468f8090292f3c038
   - enabled: 1
-    path: Assets/labo/Scenes/labo2.unity
+    path: Assets/Scenes/labo2.unity
     guid: e2554fa5532b1cb4e8be64945ef8b554
   - enabled: 1
     path: Assets/Scenes/Mars Landscape 3D Overview.unity

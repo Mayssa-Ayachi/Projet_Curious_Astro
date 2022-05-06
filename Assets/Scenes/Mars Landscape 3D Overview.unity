@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 297098016}
-  m_IndirectSpecularColor: {r: 0.21143526, g: 0.112969376, b: 0.09951227, a: 1}
+  m_IndirectSpecularColor: {r: 0.211435, g: 0.112969115, b: 0.099511996, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -9558,6 +9558,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f718fce23619c6648b3a53cd9a8a3ebc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioSource:
+  - {fileID: 1988680126}
+  slider: {fileID: 0}
 --- !u!1001 &1432378147
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11467,7 +11470,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: df81ff13b4e27490a97d74c1f325fe4e, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.25
+  m_Volume: 1
   m_Pitch: 0.25
   Loop: 0
   Mute: 0
