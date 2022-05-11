@@ -1186,7 +1186,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogue:
-  - Hello my name is Yeils
+  - Hello my name is Yeils.
   - Mars has two moons
   - 'They''re named Phobos,  meaning fear '
   - and Deimos, which is Greek for panic
@@ -2105,9 +2105,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogue:
-  - hello king
-  - I'm your brother from pakistan
-  - Are you the KING ??
+  - Hello my name is Tina.
+  - Do you know?
+  - Rusted iron particles in Mars's  rocks
+  - give the planet a red hue.
   isTalking: 0
   scoreAstroText: {fileID: 1104560828}
 --- !u!1 &591755123
@@ -7749,8 +7750,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogue:
-  - azeerr
-  - lkneidfvmlin
+  - Hello my name is Lina.
+  - Carbon dioxide is a gas that exhale
+  - and too much can be toxic.
+  - To live  on Mars, we'd need breathable oxygene.
   isTalking: 0
   scoreAstroText: {fileID: 1104560828}
 --- !u!1 &922641544
@@ -9001,8 +9004,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: -0.094, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -1, y: -123}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: -0.99989986, y: -123}
+  m_SizeDelta: {x: 115.8996, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1209103943
 MonoBehaviour:
@@ -10495,9 +10498,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogue:
-  - Hello my name is Martina
-  - Rusted iron particles in Mars's rocks
-  - give the planet a red hue.
+  - Hello my name is John.
+  - Scientists think Mars once had rivers, lakes.
+  - Today water tickles down crater walls.
   isTalking: 0
   scoreAstroText: {fileID: 1104560828}
 --- !u!136 &1708851458
@@ -11093,9 +11096,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogue:
-  - dlfknvefd
-  - mlkdnv
-  - mfk,ovf
+  - Hello my name is Mario.
+  - The sky is a yellowish brown is daytime
+  - but  turns blue at suns and sunrise.
   isTalking: 0
   scoreAstroText: {fileID: 1104560828}
 --- !u!1001 &1853804767

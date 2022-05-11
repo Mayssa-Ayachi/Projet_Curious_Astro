@@ -24,6 +24,11 @@ public class Dialogue : MonoBehaviour {
         astroCounter=0;
         imageBox=GameObject.FindGameObjectWithTag("ImageBox1").GetComponent<Image>();
         textBox=GameObject.FindGameObjectWithTag("DialogueBox1").GetComponent<Text>();
+        once1=true;
+        once2=true;
+        once3=true;
+        once4=true;
+        once5=true;
     }
 
     public void Initialize(){
@@ -48,31 +53,31 @@ public class Dialogue : MonoBehaviour {
             
 		    Initialize();
             
-            if(dialogue[0]=="Hello my name is Yeils" && once1){
+            if(dialogue[0]=="Hello my name is Yeils." && once1){
                 astroCounter++;
                 scoreAstroText.text = "Astronaut : "+astroCounter+"/5";
                 once1=false;
             }
             
-            if(dialogue[0]=="hello king" && once2){
+            if(dialogue[0]=="Hello my name is Tina." && once2){
                 astroCounter++;
                 scoreAstroText.text = "Astronaut : "+astroCounter+"/5";
                 once2=false;
             }
                     
-            if(dialogue[0]=="Hello my name is Martina" && once3){
+            if(dialogue[0]=="Hello my name is John." && once3){
                 astroCounter++;
                 scoreAstroText.text = "Astronaut : "+astroCounter+"/5";
                 once3=false;
             }
             
-            if(dialogue[0]=="azeerr" && once4){
+            if(dialogue[0]=="Hello my name is Lina." && once4){
                 astroCounter++;
                 scoreAstroText.text = "Astronaut : "+astroCounter+"/5";
                 once4=false;
             }
                     
-            if(dialogue[0]=="dlfknvefd" && once5){
+            if(dialogue[0]=="Hello my name is Mario." && once5){
                 astroCounter++;
                 scoreAstroText.text = "Astronaut : "+astroCounter+"/5";
                 once5=false;

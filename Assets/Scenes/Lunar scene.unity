@@ -228,13 +228,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startImage: {fileID: 1117207410}
-  firstMissionDuration: 120
+  firstMissionDuration: 240
   firstMissionTimer: {fileID: 1204981967}
   firstMissionTimerFill: {fileID: 546026683}
   firstMissionTimerText: {fileID: 1530750583}
   scoreAstro: {fileID: 179418204}
   secondMission: {fileID: 1274053624}
-  secondMissionDuration: 120
+  secondMissionDuration: 180
   rockets: {fileID: 468146787}
   secondMissionTimer: {fileID: 383077605}
   secondMissionTimerFill: {fileID: 165346478}
@@ -252,7 +252,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85ee55cf95c78534ebf9b5ae2b678da1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  duration: 20
+  duration: 10
   quizPanel: {fileID: 1870050915}
   correctAnswer: {fileID: 1877047692}
   wrongAnswer: {fileID: 393518332}
@@ -9539,43 +9539,43 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4008215048926364, guid: 4f2ec922dde4f9447863a1de42b853f1, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 50.76
+      value: 50.802002
       objectReference: {fileID: 0}
     - target: {fileID: 4008215048926364, guid: 4f2ec922dde4f9447863a1de42b853f1, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5.8
+      value: 5.526531
       objectReference: {fileID: 0}
     - target: {fileID: 4008215048926364, guid: 4f2ec922dde4f9447863a1de42b853f1, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -49.74
+      value: -49.800713
       objectReference: {fileID: 0}
     - target: {fileID: 4008215048926364, guid: 4f2ec922dde4f9447863a1de42b853f1, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.9962444
+      value: 0.9978402
       objectReference: {fileID: 0}
     - target: {fileID: 4008215048926364, guid: 4f2ec922dde4f9447863a1de42b853f1, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.04570975
+      value: -0.019310597
       objectReference: {fileID: 0}
     - target: {fileID: 4008215048926364, guid: 4f2ec922dde4f9447863a1de42b853f1, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.0017979582
+      value: -0.0006331365
       objectReference: {fileID: 0}
     - target: {fileID: 4008215048926364, guid: 4f2ec922dde4f9447863a1de42b853f1, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.07351647
+      value: -0.062782824
       objectReference: {fileID: 0}
     - target: {fileID: 4008215048926364, guid: 4f2ec922dde4f9447863a1de42b853f1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: -5.241
+      value: -2.213
       objectReference: {fileID: 0}
     - target: {fileID: 4008215048926364, guid: 4f2ec922dde4f9447863a1de42b853f1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0.181
+      value: 0.067
       objectReference: {fileID: 0}
     - target: {fileID: 4008215048926364, guid: 4f2ec922dde4f9447863a1de42b853f1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: -8.449
+      value: -7.202
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4f2ec922dde4f9447863a1de42b853f1, type: 3}
@@ -10791,9 +10791,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogue:
-  - dlfknvefd
-  - mlkdnv
-  - mfk,ovf
+  - Hello my name is Mario.
+  - The moon is too small to have gravity
+  - to hold on to an atmosphere.
   isTalking: 0
   scoreAstroText: {fileID: 1104560828}
 --- !u!136 &1762306239
@@ -10970,11 +10970,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogue:
-  - Hello my name is Yeils
-  - Mars has two moons
-  - 'They''re named Phobos,  meaning fear '
-  - and Deimos, which is Greek for panic
-  - Mars is named after the Roman god of war
+  - Hello my name is Yeils.
+  - Did you know ?
+  - A day on the moon lasts 27 earth days.
   isTalking: 0
   scoreAstroText: {fileID: 1104560828}
 --- !u!136 &1789978923
@@ -11170,9 +11168,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogue:
-  - hello king
-  - I'm your brother from pakistan
-  - Are you the KING ??
+  - Hello my name is Tina.
+  - High tides are determined by
+  - the moon's position in the sky.
   isTalking: 0
   scoreAstroText: {fileID: 1104560828}
 --- !u!136 &1851098748
@@ -11602,9 +11600,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogue:
-  - Hello my name is Martina
-  - Rusted iron particles in Mars's rocks
-  - give the planet a red hue.
+  - Hello my name is John.
+  - Most scientists think that
+  - large asteroid struck the earth
+  - and this is how we got the moon.
   isTalking: 0
   scoreAstroText: {fileID: 1104560828}
 --- !u!136 &1940387779
@@ -11644,8 +11643,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogue:
-  - azeerr
-  - lkneidfvmlin
+  - Hello my name is Lina.
+  - The moon reflects light from the sun.
+  - That's what gives it a glowing appearance.
   isTalking: 0
   scoreAstroText: {fileID: 1104560828}
 --- !u!136 &1951397333
