@@ -56,6 +56,14 @@ TagManager:
   - Robot4
   - moon
   - mars
+  - rocket9
+  - rocket10
+  - rocket11
+  - rocket12
+  - rocket13
+  - rocket14
+  - rocket15
+  - rocket16
   layers:
   - Default
   - TransparentFX

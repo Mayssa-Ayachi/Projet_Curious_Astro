@@ -178,6 +178,38 @@ namespace StarterAssets {
                 MakeQuiz("rocket8","The right answer is 1","first answer\n\nTap 1","second answer\n\nTap 2","third answer\n\nTap 3");
                 currentState8 = true;
             }
+            if(other.gameObject.CompareTag("rocket9")){
+                MakeQuiz("rocket9","aaaaaa","2\n\nTap 1","3\n\nTap 2","4\n\nTap 3");
+                currentState1 = true;
+            }
+            if(other.gameObject.CompareTag("rocket10")){
+                MakeQuiz("rocket10","aaaaaa","Love God\n\nTap 1","War God\n\nTap 2","Water God\n\nTap 3");
+                currentState2 = true;
+            }
+            if(other.gameObject.CompareTag("rocket11")){
+                MakeQuiz("rocket11","aaaaaa","first answer\n\nTap 1","second answer\n\nTap 2","third answer\n\nTap 3");
+                currentState3 = true;
+            }
+            if(other.gameObject.CompareTag("rocket12")){
+                MakeQuiz("rocket12","aaaaaaaaa","first answer\n\nTap 1","second answer\n\nTap 2","third answer\n\nTap 3");
+                currentState4 = true;
+            }
+            if(other.gameObject.CompareTag("rocket13")){
+                MakeQuiz("rocket13","aaaaaaaa","first answer\n\nTap 1","second answer\n\nTap 2","third answer\n\nTap 3");
+                currentState5 = true;
+            }
+            if(other.gameObject.CompareTag("rocket14")){
+                MakeQuiz("rocket14","aaaaaaaa","Dark planet\n\nTap 1","Red planet\n\nTap 2","Empty planet\n\nTap 3");
+                currentState6 = true;
+            }
+            if(other.gameObject.CompareTag("rocket15")){
+                MakeQuiz("rocket15","aaaaaaaaaaaa","first answer\n\nTap 1","second answer\n\nTap 2","third answer\n\nTap 3");
+                currentState7 = true;
+            }
+            if(other.gameObject.CompareTag("rocket16")){
+                MakeQuiz("rocket16","aaaaaaaaaaa","first answer\n\nTap 1","second answer\n\nTap 2","third answer\n\nTap 3");
+                currentState8 = true;
+            }
         }
 
         void MakeQuiz(string name, string question, string answer1, string answer2, string answer3){
