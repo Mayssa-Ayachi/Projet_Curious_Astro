@@ -74,7 +74,7 @@ namespace StarterAssets {
         }
 
         IEnumerator UpdateTimer(){
-            while(remainingDuration>=0 && Dialogue.astroCounter<2){
+            while(remainingDuration>=0 && Dialogue.astroCounter<5){
                 firstMissionTimerText.text = $"{remainingDuration / 60:00}:{remainingDuration % 60:00}";
                 firstMissionTimerFill.fillAmount = Mathf.InverseLerp(0, firstMissionDuration, remainingDuration);
                 remainingDuration--;
@@ -85,7 +85,7 @@ namespace StarterAssets {
         }
 
         void OnEnd(){
-            if(Dialogue.astroCounter == 2){
+            if(Dialogue.astroCounter == 5){
                 // Mission 1 succeeded
                 FirstPersonController.canMove=false;
                 endFirstMission = true;
@@ -119,7 +119,7 @@ namespace StarterAssets {
         }
 
         IEnumerator UpdateTimer2(){
-            while(remainingDuration>=0 && ItemCollector.score<2 && ItemCollector.visitedRockets<3){
+            while(remainingDuration>=0 && ItemCollector.score<5 && ItemCollector.visitedRockets<8){
                 secondMissionTimerText.text = $"{remainingDuration / 60:00}:{remainingDuration % 60:00}";
                 secondMissionTimerFill.fillAmount = Mathf.InverseLerp(0, secondMissionDuration, remainingDuration);
                 remainingDuration--;
@@ -130,12 +130,12 @@ namespace StarterAssets {
         }
        
         void OnEnd2(){
-            if(ItemCollector.score==2){
+            if(ItemCollector.score==5){
                 // Mission 2 succeeded
                 FirstPersonController.canMove=false;
                 endSecondMission=true;
             }
-            else if(ItemCollector.visitedRockets==3){
+            else if(ItemCollector.visitedRockets==8){
                 // Rockets number over
                 FirstPersonController.canMove=false;
                 secondMissionTimer.SetActive(false);
