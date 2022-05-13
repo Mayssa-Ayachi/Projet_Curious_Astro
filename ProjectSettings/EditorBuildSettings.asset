@@ -50,5 +50,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/timeoutmoon.unity
     guid: 44bcf71783f190645847e5b5ef15422c
+  - enabled: 1
+    path: Assets/Scenes/final scene.unity
+    guid: d496617c10787664ca9a693bdfa0213d
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 9e7be553448fa2546aea5752021cbcf7, type: 2}

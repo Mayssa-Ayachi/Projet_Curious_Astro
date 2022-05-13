@@ -6,10 +6,11 @@ using UnityEngine.UI;
 
 namespace StarterAssets{
     public class sceneswitcher : MonoBehaviour{
-
+        [SerializeField] GameObject finalscene1;
         [SerializeField] GameObject[] audioSource;
         [SerializeField] GameObject slider;
         public static float volume=0.9f;
+         int compteur=0;
 
         public void Start(){
             if(slider!=null)
@@ -18,6 +19,10 @@ namespace StarterAssets{
                 for(int i=0;i<audioSource.Length;i++)
                     audioSource[i].GetComponent<AudioSource>().volume=volume;
         }
+        public void update(){
+            compteur++;
+            if(compteur==15);
+                    finalscene1.SetActive(false);}
         public void playGame(){
             SceneManager.LoadScene("loading scene");
         }
@@ -47,9 +52,9 @@ namespace StarterAssets{
         public void backtomenumars(){ 
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex -9);
         }
-        public void Gotolab(){//succes mission mars
+        /*public void Gotolab(){//succes mission mars
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex -2);
-        }
+        }*/
         public void unlockmars(){
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex +1);
         }
@@ -79,6 +84,10 @@ namespace StarterAssets{
         }
         public void backmenumoon(){//mta3 time out moon
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex -12);
+        }
+        public void endingscene(){//won mars
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex +4);
+                    
         }
     }
 }

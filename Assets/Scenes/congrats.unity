@@ -211,7 +211,7 @@ GameObject:
   - component: {fileID: 326998319}
   - component: {fileID: 326998318}
   m_Layer: 5
-  m_Name: Go to Menu
+  m_Name: back to menu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -401,7 +401,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: GO TO LAB
+  m_Text: ENDING SCENE
 --- !u!222 &384849558
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1031,6 +1031,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f718fce23619c6648b3a53cd9a8a3ebc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  finalscene1: {fileID: 0}
+  audioSource: []
+  slider: {fileID: 0}
 --- !u!1 &2071666351
 GameObject:
   m_ObjectHideFlags: 0
@@ -1044,7 +1047,7 @@ GameObject:
   - component: {fileID: 2071666354}
   - component: {fileID: 2071666353}
   m_Layer: 5
-  m_Name: Go to the lab
+  m_Name: ending scene
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1116,7 +1119,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1950325359}
         m_TargetAssemblyTypeName: StarterAssets.sceneswitcher, Assembly-CSharp
-        m_MethodName: Gotolab
+        m_MethodName: endingscene
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
