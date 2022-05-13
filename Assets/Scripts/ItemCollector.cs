@@ -24,6 +24,7 @@ namespace StarterAssets {
         bool test;
         float startingTime;
         float currentTime;
+        float currentTime1;
         float timeTest;
         bool currentState1;
         bool currentState2;
@@ -50,6 +51,7 @@ namespace StarterAssets {
             _input = GetComponent<StarterAssetsInputs>();
             startingTime=duration;
             currentTime = startingTime;
+            currentTime1 = startingTime;
             timeTest=0f;
             currentState1=false;
             currentState2=false;
@@ -103,24 +105,26 @@ namespace StarterAssets {
                     currentState8=QuizResult(currentState8,"1");
                 
                 if(currentState9)
-                    currentState9=QuizResult(currentState1,"1");
+                    currentState9=QuizResult1(currentState9,"1");
                 if(currentState10)
-                    currentState10=QuizResult(currentState2,"3");
+                    currentState10=QuizResult1(currentState10,"3");
                 if(currentState11)
-                    currentState11=QuizResult(currentState3,"3");
+                    currentState11=QuizResult1(currentState11,"3");
                 if(currentState12)
-                    currentState12=QuizResult(currentState4,"2");
+                    currentState12=QuizResult1(currentState12,"2");
                 if(currentState13)
-                    currentState13=QuizResult(currentState5,"2");
+                    currentState13=QuizResult1(currentState13,"2");
                 if(currentState14)
-                    currentState14=QuizResult(currentState6,"1");
+                    currentState14=QuizResult1(currentState14,"1");
                 if(currentState15)
-                    currentState15=QuizResult(currentState7,"1");
+                    currentState15=QuizResult1(currentState15,"1");
                 if(currentState16)
-                    currentState16=QuizResult(currentState8,"3");
+                    currentState16=QuizResult1(currentState16,"3");
 
                 if (currentTime<=0)
                     QuizTimeOver();
+                if (currentTime1<=0)
+                    QuizTimeOver1();
             }
             else
                 quizPanel.SetActive(false);
@@ -163,6 +167,43 @@ namespace StarterAssets {
             return currentState;
         }
 
+        bool QuizResult1(bool currentState, string correct){
+            currentTime1-=1*Time.deltaTime;
+            quizTimerText.text=Mathf.Round(currentTime1).ToString();
+            quizTimerFill.fillAmount=Mathf.InverseLerp(0,duration,currentTime1);
+            if((_input.tap1 && !_input.tap2 && !_input.tap3) || (_input.tap2 && !_input.tap1 && !_input.tap3) 
+                                                             || (_input.tap3 && !_input.tap2 && !_input.tap1)){
+                quizPanel.SetActive(false);
+                test=true;
+                visitedRockets++;
+                currentState=false;
+                currentTime1=duration;
+                FirstPersonController.canMove=true;
+            }
+            if(_input.tap1 && !_input.tap2 && !_input.tap3 && correct=="1"){
+                correctAnswer.SetActive(true);
+                score++;
+                scoreRocketText.text = "Score : "+score+"/5";
+            }
+            else if(_input.tap1 && !_input.tap2 && !_input.tap3 && correct!="1")
+                wrongAnswer.SetActive(true);
+            else if(_input.tap2 && !_input.tap1 && !_input.tap3 && correct=="2"){
+                correctAnswer.SetActive(true);
+                score++;
+                scoreRocketText.text = "Score : "+score+"/5";
+            }
+            else if(_input.tap2 && !_input.tap1 && !_input.tap3 && correct!="2")
+                wrongAnswer.SetActive(true);
+            else if(_input.tap3 && !_input.tap2 && !_input.tap1 && correct=="3"){
+                correctAnswer.SetActive(true);
+                score++;
+                scoreRocketText.text = "Score : "+score+"/5";
+            }
+            else if(_input.tap3 && !_input.tap2 && !_input.tap1 && correct!="3")
+                wrongAnswer.SetActive(true);
+            return currentState;
+        }
+
         void QuizTimeOver(){
             quizPanel.SetActive(false);
             timeOver.SetActive(true);
@@ -175,11 +216,44 @@ namespace StarterAssets {
             currentState6 = false;
             currentState7 = false;
             currentState8 = false;
+
+            currentState9=false;
+            currentState10=false;
+            currentState11=false;
+            currentState12=false;
+            currentState13=false;
+            currentState14=false;
+            currentState15=false;
+            currentState16=false;
             FirstPersonController.canMove=true;
             test=true;
             visitedRockets++;
         }
-        
+        void QuizTimeOver1(){
+            quizPanel.SetActive(false);
+            timeOver.SetActive(true);
+            currentTime1 = duration;
+            currentState1 = false;
+            currentState2 = false;
+            currentState3 = false;
+            currentState4 = false;
+            currentState5 = false;
+            currentState6 = false;
+            currentState7 = false;
+            currentState8 = false;
+
+            currentState9=false;
+            currentState10=false;
+            currentState11=false;
+            currentState12=false;
+            currentState13=false;
+            currentState14=false;
+            currentState15=false;
+            currentState16=false;
+            FirstPersonController.canMove=true;
+            test=true;
+            visitedRockets++;
+        }
 
         public void OnTriggerEnter(Collider other){
             if(other.gameObject.CompareTag("rocket1")){
